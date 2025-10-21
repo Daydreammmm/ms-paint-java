@@ -60,7 +60,8 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                     System.out.println("Started Rectangle");
                     Point startPoint = new Point(mouseEvent.getX(), mouseEvent.getY());
                     this.rectangle = new Rectangle(startPoint, 0, 0);
-                } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
+                }
+                else if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
                     if(this.rectangle != null){
                         // Calculate proper rectangle coordinates (handle negative dimensions)
                         double startX = this.rectangle.getTopLeft().x;
