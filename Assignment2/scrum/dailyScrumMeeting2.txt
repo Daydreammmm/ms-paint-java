@@ -1,40 +1,40 @@
 # Fill in, commit and push each day.
-Member name:      email:     utorid:   
+Member name: Edwin Huang     email: edwinnn.huang@mail.utoronto.ca    utorid:   huanged6
 
 Oct 15,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Create the branches
+	What I will do today: Start reading through the bugs and user story
+	Obstacles I face: making the local branches remote
 
 Oct 16,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Read through the bugs and user story
+	What I will do today: Read through the directory and see how the design is
+	Obstacles I face: A lot of reading
 
 Oct 17,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Read through the directory and see how the design is
+	What I will do today: Start working on the branch bubg1.002
+	Obstacles I face: Not yet
 
 Oct 18,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Start working on the branch bug1.002
+	What I will do today: Finish bug1.002 and push/commit
+	Obstacles I face: Only pushed it locally and didn't add to remote by accident
 
 Oct 19,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Finish bug1.002 and push/commit
+	What I will do today: Start working on us1.003
+	Obstacles I face: Still couldn't figure out how to push to origin
 
 Oct 20,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Start working on us1.003
+	What I will do today: Finish us1.003
+	Obstacles I face: Forgot to create new branch and edited it on my bug1.002 branch
 
 Oct 21,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Finish us1.003
+	What I will do today: create the us1.003 branch and fix my mistakes, figured out how to commit and push to remote properly
+	Obstacles I face: Troubleshooting the branch pushing and committing
 
 Oct 22,2025
 	What I did yesterday:
