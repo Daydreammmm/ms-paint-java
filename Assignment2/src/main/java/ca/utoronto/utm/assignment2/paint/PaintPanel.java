@@ -79,6 +79,16 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                         this.rectangle.setWidth(width);
                         this.rectangle.setHeight(height);
 
+                        this.update(null, null);
+                    }
+                }
+                else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)){
+                    if(this.rectangle!=null){
+                        this.model.addRectangle(this.rectangle);
+                        System.out.println("Added Rectangle");
+                        this.rectangle = null;
+                        this.update(null, null);
+
                     }
                 }
                 break;
@@ -127,6 +137,14 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
             double width = r.getWidth();
             double height = r.getHeight();
             g2d.strokeRect(x, y, width, height);
+        }
+
+        // Displaying rectangle mid construction
+        if (this.rectangle!=null){
+            g2d.setStroke(Color.BLUEVIOLET);
+            g2d.strokeRect(this.rectangle.getTopLeft().x, this.rectangle.getTopLeft().y,
+                    this.rectangle.getWidth(), this.rectangle.getHeight());
+
         }
     }
 }
