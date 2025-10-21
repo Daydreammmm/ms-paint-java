@@ -1,8 +1,8 @@
 # Fill in, commit and push each day.
-Member name:      email:     utorid:   
+Member name:  Sushim Malla    email:  sushim.malla@mail.utoronto.ca   utorid:  mallasus
 
 Oct 15,2025
-	What I did yesterday:
+	What I did yesterday: Created git branch added all files
 	What I will do today:
 	Obstacles I face:
 
