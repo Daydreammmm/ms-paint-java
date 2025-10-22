@@ -28,11 +28,9 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
             button.setMinWidth(100);
             button.setMinHeight(40);
 
-            // Set tooltip for accessibility
             Tooltip tooltip = new Tooltip(buttonLabels[i]);
             Tooltip.install(button, tooltip);
 
-            // Store the command as user data
             button.setUserData(buttonLabels[i]);
 
             this.add(button, 0, row);
@@ -44,28 +42,24 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
     private Node[] createIcons() {
         Node[] icons = new Node[5];
 
-        // Circle icon
         Circle circleIcon = new Circle(15);
         circleIcon.setFill(Color.TRANSPARENT);
         circleIcon.setStroke(Color.BLACK);
         circleIcon.setStrokeWidth(2);
         icons[0] = circleIcon;
 
-        // Rectangle icon
         Rectangle rectIcon = new Rectangle(25, 15);
         rectIcon.setFill(Color.TRANSPARENT);
         rectIcon.setStroke(Color.BLACK);
         rectIcon.setStrokeWidth(2);
         icons[1] = rectIcon;
 
-        // Square icon
         Rectangle squareIcon = new Rectangle(20, 20);
         squareIcon.setFill(Color.TRANSPARENT);
         squareIcon.setStroke(Color.BLACK);
         squareIcon.setStrokeWidth(2);
         icons[2] = squareIcon;
 
-        // Squiggle icon
         Line squiggle1 = new Line(5, 10, 15, 5);
         Line squiggle2 = new Line(15, 5, 25, 15);
         squiggle1.setStroke(Color.BLACK);
