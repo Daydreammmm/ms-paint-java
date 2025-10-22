@@ -141,13 +141,15 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
 
         // Draw Rectangles
         ArrayList<Rectangle> rectangles = this.model.getRectangles();
-        g2d.setStroke(Color.BLUE); // Use stroke for rectangle outlines
+        g2d.setStroke(Color.BLUE);
+        g2d.setFill(Color.BLUE);// Use stroke for rectangle outlines
         for(Rectangle r : rectangles){
             double x = r.getTopLeft().x;
             double y = r.getTopLeft().y;
             double width = r.getWidth();
             double height = r.getHeight();
             g2d.strokeRect(x, y, width, height);
+            g2d.fillRect(x, y, width, height);
         }
 
         if (this.rectangle!=null){
