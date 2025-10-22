@@ -1,45 +1,46 @@
 # Fill in, commit and push each day.
-Member name:      email:     utorid:   
+Member name: Jayant Saini      email: jayant.saini@mail.utoronto.ca     utorid: 1011146886
 
 Oct 15,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Create my branches for BUG1.006 AND US1.004
+	What I will do today: Work on my branch for BUG1.006
+	Obstacles I face: Error handling while merging and completing my branch.
 
 Oct 16,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Worked on my branch BUG1.006
+	What I will do today: Continue working on my branch for BUG1.006
+	Obstacles I face: Understanding the logical error in BUG1.006 and correcting it.
 
 Oct 17,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Fixing the logical error for BUG1.006
+	What I will do today: Complete BUG1.006 fully.
+	Obstacles I face: Merging the BUG1.006 branch with the master branch.
 
 Oct 18,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Completed BUG1.006 and merged it onto Master
+	What I will do today: Work on US1.006
+	Obstacles I face: Logic challenges and understanding the required code to finish US1.006.
 
 Oct 19,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Worked on US1.006
+	What I will do today: Finish US1.006
+	Obstacles I face: Merging US1.006 with the master branch.
 
 Oct 20,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Merged US1.006 with the master branch.
+	What I will do today: Test the Paint file to see if everything works as expected.
+	Obstacles I face: Debugging errors.
 
 Oct 21,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Tested Paint file and debugged errors.
+	What I will do today: Work on a merge conflict I ran into while correcting BUG1.006.
+	Obstacles I face: Resolving the merge conflict
 
 Oct 22,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Resolved the merge conflict.
+	What I will do today: Testing the Paint file once all group members finish their bugs and user stories, and
+	planning the way forward.
+	Obstacles I face: Efficient distribution of tasks and error handling.
 
 Oct 23,2025
 	What I did yesterday:
