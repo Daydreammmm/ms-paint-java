@@ -44,17 +44,8 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                     System.out.println("Started Circle");
                     Point centre = new Point(mouseEvent.getX(), mouseEvent.getY());
                     this.circle=new Circle(centre, 0);
-                } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
-                    if(this.circle!=null){
-                        double radius = Math.abs(this.circle.getCentre().x-mouseEvent.getX());
-                        this.circle.setRadius(radius);
-                        this.model.addCircle(this.circle);
-                        System.out.println("Added Circle");
-                        this.circle=null;
-                    }
-                    Point centre = new Point(mouseEvent.getX(), mouseEvent.getY());
-                    this.circle=new Circle(centre, 0);
-                } else if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
+                }
+                else if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
                     if(this.circle!=null) {
                         // Use distance formula Sqrt((x2-x1)^2+(y2-y1)^2)
                         double radius = Math.sqrt(Math.pow((mouseEvent.getX() - this.circle.getCentre().x), 2) +
