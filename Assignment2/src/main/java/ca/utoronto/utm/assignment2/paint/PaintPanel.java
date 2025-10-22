@@ -52,6 +52,27 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                         System.out.println("Added Circle");
                         this.circle=null;
                     }
+                    Point centre = new Point(mouseEvent.getX(), mouseEvent.getY());
+                    this.circle=new Circle(centre, 0);
+                } else if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
+                    if(this.circle!=null) {
+                        // Use distance formula Sqrt((x2-x1)^2+(y2-y1)^2)
+                        double radius = Math.sqrt(Math.pow((mouseEvent.getX() - this.circle.getCentre().x), 2) +
+                                Math.pow((mouseEvent.getY() - this.circle.getCentre().y), 2));
+                        this.circle.setRadius(radius);
+                    }
+                } else if (mouseEventType.equals(MouseEvent.MOUSE_MOVED)) {
+
+                } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
+                    if(this.circle!=null){
+                        // Problematic notion of radius and centre!!
+//                        double radius = Math.sqrt(Math.pow((mouseEvent.getX() - this.circle.getCentre().x), 2) +
+//                                Math.pow((mouseEvent.getY() - this.circle.getCentre().y), 2));
+//                                this.circle.setRadius(radius);
+                        this.model.addCircle(this.circle);
+                        System.out.println("Added Circle");
+                        this.circle=null;
+                    }
                 }
                 break;
 
@@ -139,12 +160,19 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
             g2d.strokeRect(x, y, width, height);
         }
 
-        // Displaying rectangle mid construction
         if (this.rectangle!=null){
             g2d.setStroke(Color.BLUEVIOLET);
             g2d.strokeRect(this.rectangle.getTopLeft().x, this.rectangle.getTopLeft().y,
                     this.rectangle.getWidth(), this.rectangle.getHeight());
 
+        }
+
+        g2d.setFill(Color.GREEN);
+        for(Circle c: this.model.getCircles()){
+            double x = c.getCentre().x;
+            double y = c.getCentre().y;
+            double radius = c.getRadius();
+            g2d.fillOval(x-radius, y-radius, radius*2, radius*2);
         }
     }
 }
