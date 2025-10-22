@@ -14,6 +14,7 @@ import javafx.scene.Node;
 public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEvent> {
 
     private View view;
+    private Button selectedButton; // keep track of which button is selected
 
     public ShapeChooserPanel(View view) {
         this.view = view;
@@ -87,8 +88,24 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 
     @Override
     public void handle(ActionEvent event) {
+        Button clickedButton = (Button) event.getSource();
+
         String command = (String) ((Button) event.getSource()).getUserData();
         view.setMode(command);
         System.out.println(command);
+
+        highlightButton(clickedButton);
+    }
+
+    private void highlightButton(Button button) {
+        if (selectedButton != null) {
+            // Reset the previous button to its normal look
+            selectedButton.setStyle("");
+        }
+
+        selectedButton = button;
+        selectedButton.setStyle(
+                "-fx-background-color: #87CEFA;"
+        );
     }
 }
