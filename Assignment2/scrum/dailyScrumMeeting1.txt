@@ -2,43 +2,43 @@
 Member name:  Sushim Malla    email:  sushim.malla@mail.utoronto.ca   utorid:  mallasus
 
 Oct 15,2025
-	What I did yesterday: Created git branch added all files
-	What I will do today:
+	What I did yesterday:
+	What I will do today: Created git branch added all files
 	Obstacles I face:
 
 Oct 16,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Created git branch added all files
+	What I will do today: Looked at the issue that I have to solve
+	Obstacles I face: Thinking about the code
 
 Oct 17,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Looked at the issue that I have to solve
+	What I will do today: Started writing the code, and trying to add photos
+	Obstacles I face: Adding the photos
 
 Oct 18,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Tried adding the photos
+	What I will do today: Had to think of a workaround for it
+	Obstacles I face: Did not work
 
 Oct 19,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Had to think of a workaround for it
+	What I will do today: Nothing
+	Obstacles I face: Nothing
 
 Oct 20,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Nothing
+	What I will do today: Rewriting the code and created a helper method for the icons
+	Obstacles I face: Writing the code was confusing
 
 Oct 21,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Writing the helper
+	What I will do today: Connecting the helper to the print and a lot of debugging
+	Obstacles I face: Getting it to function properly
 
 Oct 22,2025
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday: Finished up the code for BUG1.001
+	What I will do today: Merged the branch
 	Obstacles I face:
 
 Oct 23,2025
