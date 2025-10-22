@@ -106,8 +106,11 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
 
             case "Square": break;
             case "Squiggle":
-                if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
+                if (mouseEventType.equals(MouseEvent.MOUSE_PRESSED)) {
+                    this.model.addPoint(new Point(Double.NaN, Double.NaN));
+                } else if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
                     this.model.addPoint(new Point(mouseEvent.getX(), mouseEvent.getY()));
+                } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
                 }
                 break;
             case "Polyline": break;
