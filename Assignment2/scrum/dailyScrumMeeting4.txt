@@ -1,45 +1,45 @@
 # Fill in, commit and push each day.
-Member name:      email:     utorid:   
+Member name: Daniyal Harris     email: daniyal.harris@mail.utoronto.ca     utorid: harri874
 
 Oct 15,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+    What I did yesterday: —
+    What I will do today: Kick off a live circle preview while dragging.
+    Obstacles I face: None.
 
 Oct 16,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+    What I did yesterday: Got the circle preview working; it updates as I drag.
+    What I will do today: Do quick checks to make sure it feels natural.
+    Obstacles I face: Some git issues.
 
 Oct 17,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+    What I did yesterday: Smoothed the repaint timing; feels solid now.
+    What I will do today: Close the circle story.
+    Obstacles I face: None.
 
 Oct 18,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+    What I did yesterday: Wrapped up the circle work.
+    What I will do today: Start looking into the squiggle bug.
+    Obstacles I face: None.
 
 Oct 19,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+    What I did yesterday: Reproduced the issue—squiggles were linking between drags.
+    What I will do today: Make each drag create its own squiggle.
+    Obstacles I face: None.
 
 Oct 20,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+    What I did yesterday: Fixed it—no more unwanted connector lines.
+    What I will do today: Quick sanity pass (short drags, undo/redo).
+    Obstacles I face: None.
 
 Oct 21,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+    What I did yesterday: Checks passed; behavior looks consistent.
+    What I will do today: Close the squiggle bug and jot a brief note.
+    Obstacles I face: Some git issues.
 
 Oct 22,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+    What I did yesterday: Confirmed circles and squiggles work well together.
+    What I will do today: Minor polish and push the changes.
+    Obstacles I face: None.
 
 Oct 23,2025
 	What I did yesterday:
