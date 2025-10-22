@@ -91,14 +91,8 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                 for(int i=0;i<points.size()-1; i++){
                         Point p1=points.get(i);
                         Point p2=points.get(i+1);
-                        if (p1 == null || p2 == null) continue;
-                        if (Double.isNaN(p1.x) || Double.isNaN(p1.y) ||
-                                Double.isNaN(p2.x) || Double.isNaN(p2.y)) {
-                            continue;
-                        }
                         g2d.strokeLine(p1.x,p1.y,p2.x,p2.y);
                 }
-
                 // Draw Circles
                 ArrayList<Circle> circles = this.model.getCircles();
 
