@@ -147,7 +147,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
             double x = this.circle.getCentre().x;
             double y = this.circle.getCentre().y;
             double r = this.circle.getRadius();
-            g2d.setStroke(Color.DARKGREEN);
+            g2d.setStroke(Color.GREEN);
             g2d.strokeOval(x - r, y - r, r * 2, r * 2);
         }
 
@@ -165,7 +165,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
         }
 
         if (this.rectangle!=null){
-            g2d.setStroke(Color.BLUEVIOLET);
+            g2d.setStroke(Color.BLUE);
             g2d.strokeRect(this.rectangle.getTopLeft().x, this.rectangle.getTopLeft().y,
                     this.rectangle.getWidth(), this.rectangle.getHeight());
 
