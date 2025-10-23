@@ -17,6 +17,8 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
     public Circle circle; // This is VERY UGLY, should somehow fix this!!
     public Rectangle rectangle; // Temporary rectangle during creation
 
+    private Point startPoint;
+
     public PaintPanel(PaintModel model) {
         super(300, 300);
         this.model=model;
@@ -69,24 +71,19 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                 break;
 
             case "Rectangle":
-                if(mouseEventType.equals(MouseEvent.MOUSE_PRESSED)) {
-                    System.out.println("Started Rectangle");
-                    Point startPoint = new Point(mouseEvent.getX(), mouseEvent.getY());
+                if (mouseEventType.equals(MouseEvent.MOUSE_PRESSED)) {
+                    startPoint = new Point(mouseEvent.getX(), mouseEvent.getY());
                     this.rectangle = new Rectangle(startPoint, 0, 0);
                 }
                 else if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
-                    if(this.rectangle != null){
-                        // Calculate proper rectangle coordinates (handle negative dimensions)
-                        double startX = this.rectangle.getTopLeft().x;
-                        double startY = this.rectangle.getTopLeft().y;
+                    if (this.rectangle != null && startPoint != null) {
                         double endX = mouseEvent.getX();
                         double endY = mouseEvent.getY();
 
-                        // Ensure positive width and height
-                        double x = Math.min(startX, endX);
-                        double y = Math.min(startY, endY);
-                        double width = Math.abs(endX - startX);
-                        double height = Math.abs(endY - startY);
+                        double x = Math.min(startPoint.x, endX);
+                        double y = Math.min(startPoint.y, endY);
+                        double width = Math.abs(endX - startPoint.x);
+                        double height = Math.abs(endY - startPoint.y);
 
                         this.rectangle.setTopLeft(new Point(x, y));
                         this.rectangle.setWidth(width);
@@ -95,13 +92,12 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                         this.update(null, null);
                     }
                 }
-                else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)){
-                    if(this.rectangle!=null){
+                else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
+                    if (this.rectangle != null) {
                         this.model.addRectangle(this.rectangle);
-                        System.out.println("Added Rectangle");
                         this.rectangle = null;
+                        this.startPoint = null;
                         this.update(null, null);
-
                     }
                 }
                 break;
