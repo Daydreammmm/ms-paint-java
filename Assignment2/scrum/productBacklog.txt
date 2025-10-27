@@ -137,7 +137,7 @@ ISSUE    : Currently, you can't tell which mode "Circle", "Rectangle", ...
 --------------------------------------------------------------------------
 TYPE     : BUG BUG?.003 : sainij38 : NotStarted
 NAME     : Architecture behind choosing selection mode is poor
-PRIORITY : 4
+PRIORITY : 3
 ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :
 ISSUE    : Code is not modular and is difficult to expand. Need a better
            architecture behind selecting a drawing mode, and handling
@@ -203,7 +203,7 @@ SO THAT  : I can add squares to my canvas
 --------------------------------------------------------------------------
 TYPE     : USER STORY US2.009 : huanged6 : NotStarted
 NAME     : Draw Triangle
-PRIORITY : 2
+PRIORITY : 1
 ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :
 AS A     : user
 I WANT   : To click on three vertices, click on the first vertex and drag to the second vertex to see the line
@@ -215,7 +215,7 @@ SO THAT  : I can add triangles to my canvas
 --------------------------------------------------------------------------
 TYPE     : USER STORY US2.010 : harri874 : NotStarted
 NAME     : Draw Oval
-PRIORITY : 3
+PRIORITY : 1
 ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :
 AS A     : user
 I WANT   : To click on one corner of a rectangle, drag, and release to
