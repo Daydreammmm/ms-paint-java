@@ -61,7 +61,6 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
     public void update(Observable o, Object arg) {
         GraphicsContext g2d = this.getGraphicsContext2D();
         g2d.clearRect(0, 0, this.getWidth(), this.getHeight());
-        drawingStrat.drawMidConstruction(g2d);
 
         // Draw Lines
         ArrayList<Point> points = this.model.getPoints();
@@ -92,5 +91,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
             g2d.strokeRect(x, y, width, height);
             g2d.fillRect(x, y, width, height);
         }
+
+        drawingStrat.drawMidConstruction(g2d);
     }
 }
