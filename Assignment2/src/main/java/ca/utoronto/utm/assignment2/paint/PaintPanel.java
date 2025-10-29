@@ -11,13 +11,13 @@ import java.util.Observable;
 import java.util.Observer;
 
 public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Observer {
-    private String mode="Circle";
+    private DrawingStrat drawingStrat;
     private PaintModel model;
 
-    public Circle circle; // This is VERY UGLY, should somehow fix this!!
-    public Rectangle rectangle; // Temporary rectangle during creation
-
-    private Point startPoint;
+//    public Circle circle; // This is VERY UGLY, should somehow fix this!!
+//    public Rectangle rectangle; // Temporary rectangle during creation
+//
+//    private Point startPoint;
 
     public PaintPanel(PaintModel model) {
         super(300, 300);
@@ -32,139 +32,65 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
     }
 
     public void setMode(String mode){
-        this.mode=mode;
-        System.out.println(this.mode);
+        this.drawingStrat = Context.getDrawingStrat(mode);
+        System.out.println(mode);
     }
 
     @Override
     public void handle(MouseEvent mouseEvent) {
         EventType<MouseEvent> mouseEventType = (EventType<MouseEvent>) mouseEvent.getEventType();
-
-        switch(this.mode){
-            case "Circle":
-                if(mouseEventType.equals(MouseEvent.MOUSE_PRESSED)) {
-                    System.out.println("Started Circle");
-                    Point centre = new Point(mouseEvent.getX(), mouseEvent.getY());
-                    this.circle=new Circle(centre, 0);
-                } else if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
-                    if(this.circle!=null) {
-                        // Use distance formula Sqrt((x2-x1)^2+(y2-y1)^2)
-                        double radius = Math.sqrt(Math.pow((mouseEvent.getX() - this.circle.getCentre().x), 2) +
-                                Math.pow((mouseEvent.getY() - this.circle.getCentre().y), 2));
-                        this.circle.setRadius(radius);
-                        this.update(null, null);
-                    }
-                } else if (mouseEventType.equals(MouseEvent.MOUSE_MOVED)) {
-
-                } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
-                    if(this.circle!=null){
-                        // Problematic notion of radius and centre!!
-//                        double radius = Math.sqrt(Math.pow((mouseEvent.getX() - this.circle.getCentre().x), 2) +
-//                                Math.pow((mouseEvent.getY() - this.circle.getCentre().y), 2));
-//                                this.circle.setRadius(radius);
-                        this.model.addCircle(this.circle);
-                        System.out.println("Added Circle");
-                        this.circle=null;
-                        this.update(null, null);
-                    }
-                }
-                break;
-
-            case "Rectangle":
-                if (mouseEventType.equals(MouseEvent.MOUSE_PRESSED)) {
-                    startPoint = new Point(mouseEvent.getX(), mouseEvent.getY());
-                    this.rectangle = new Rectangle(startPoint, 0, 0);
-                }
-                else if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
-                    if (this.rectangle != null && startPoint != null) {
-                        double endX = mouseEvent.getX();
-                        double endY = mouseEvent.getY();
-
-                        double x = Math.min(startPoint.x, endX);
-                        double y = Math.min(startPoint.y, endY);
-                        double width = Math.abs(endX - startPoint.x);
-                        double height = Math.abs(endY - startPoint.y);
-
-                        this.rectangle.setTopLeft(new Point(x, y));
-                        this.rectangle.setWidth(width);
-                        this.rectangle.setHeight(height);
-
-                        this.update(null, null);
-                    }
-                }
-                else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
-                    if (this.rectangle != null) {
-                        this.model.addRectangle(this.rectangle);
-                        this.rectangle = null;
-                        this.startPoint = null;
-                        this.update(null, null);
-                    }
-                }
-                break;
-
-            case "Square": break;
-            case "Squiggle":
-                if (mouseEventType.equals(MouseEvent.MOUSE_PRESSED)) {
-                    this.model.addPoint(new Point(Double.NaN, Double.NaN));
-                } else if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
-                    this.model.addPoint(new Point(mouseEvent.getX(), mouseEvent.getY()));
-                } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
-                }
-                break;
-            case "Polyline": break;
-            default: break;
+        if (mouseEventType==MouseEvent.MOUSE_PRESSED) {
+            drawingStrat.mousePressed(mouseEvent, model);
+        } else if (mouseEventType==MouseEvent.MOUSE_RELEASED) {
+            drawingStrat.mouseReleased(mouseEvent, model);
         }
+        else if (mouseEventType==MouseEvent.MOUSE_MOVED) {
+            drawingStrat.mouseMoved(mouseEvent, model);
+        }
+        else if (mouseEventType==MouseEvent.MOUSE_CLICKED) {
+            drawingStrat.mouseClicked(mouseEvent, model);
+        }
+        else if (mouseEventType==MouseEvent.MOUSE_DRAGGED) {
+            drawingStrat.mouseDragged(mouseEvent, model);
+        }
+
+        this.update(null, null);
     }
 
     @Override
     public void update(Observable o, Object arg) {
         GraphicsContext g2d = this.getGraphicsContext2D();
         g2d.clearRect(0, 0, this.getWidth(), this.getHeight());
+        drawingStrat.drawMidConstruction(g2d);
 
         // Draw Lines
         ArrayList<Point> points = this.model.getPoints();
-        g2d.setStroke(Color.RED); // Use stroke for lines
-        for(int i=0;i<points.size()-1; i++){
-            Point p1=points.get(i);
-            Point p2=points.get(i+1);
-            g2d.strokeLine(p1.x,p1.y,p2.x,p2.y);
+        g2d.setStroke(Color.RED);
+        for(int i = 0; i < points.size() - 1; i++) {
+            Point p1 = points.get(i);
+            Point p2 = points.get(i + 1);
+            g2d.strokeLine(p1.x, p1.y, p2.x, p2.y);
         }
 
         // Draw Circles
-        ArrayList<Circle> circles = this.model.getCircles();
         g2d.setFill(Color.GREEN);
-        for(Circle c: this.model.getCircles()){
+        for(Circle c : this.model.getCircles()) {
             double x = c.getCentre().x;
             double y = c.getCentre().y;
             double radius = c.getRadius();
-            g2d.fillOval(x-radius, y-radius, radius*2, radius*2);
-        }
-        if (this.circle != null) {
-            double x = this.circle.getCentre().x;
-            double y = this.circle.getCentre().y;
-            double r = this.circle.getRadius();
-            g2d.setStroke(Color.GREEN);
-            g2d.strokeOval(x - r, y - r, r * 2, r * 2);
+            g2d.fillOval(x - radius, y - radius, radius * 2, radius * 2);
         }
 
         // Draw Rectangles
-        ArrayList<Rectangle> rectangles = this.model.getRectangles();
         g2d.setStroke(Color.BLUE);
-        g2d.setFill(Color.BLUE);// Use stroke for rectangle outlines
-        for(Rectangle r : rectangles){
+        g2d.setFill(Color.BLUE);
+        for(Rectangle r : this.model.getRectangles()) {
             double x = r.getTopLeft().x;
             double y = r.getTopLeft().y;
             double width = r.getWidth();
             double height = r.getHeight();
             g2d.strokeRect(x, y, width, height);
             g2d.fillRect(x, y, width, height);
-        }
-
-        if (this.rectangle!=null){
-            g2d.setStroke(Color.BLUE);
-            g2d.strokeRect(this.rectangle.getTopLeft().x, this.rectangle.getTopLeft().y,
-                    this.rectangle.getWidth(), this.rectangle.getHeight());
-
         }
     }
 }
