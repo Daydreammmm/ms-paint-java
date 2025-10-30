@@ -12,6 +12,7 @@ public class SquareStrat implements DrawingStrat {
     public void mousePressed(MouseEvent e, PaintModel model) {
         startPoint = new Point(e.getX(), e.getY());
         this.square = new Square(startPoint, 0);
+        System.out.println("Started Square");
     }
 
     @Override
@@ -39,6 +40,7 @@ public class SquareStrat implements DrawingStrat {
             if (this.square.getSide() > 0) {
                 model.addSquare(this.square);
             }
+            System.out.println("Added Square");
             this.square = null;
             this.startPoint = null;
         }

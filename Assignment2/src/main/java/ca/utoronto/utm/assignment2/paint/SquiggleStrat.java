@@ -9,11 +9,13 @@ public class SquiggleStrat implements DrawingStrat {
     @Override
     public void mousePressed(MouseEvent e, PaintModel model) {
         model.addPoint(new Point(Double.NaN, Double.NaN));
+        System.out.println("Started Squiggle");
     }
 
     @Override
     public void mouseDragged(MouseEvent e, PaintModel model) {
         model.addPoint(new Point(e.getX(), e.getY()));
+        System.out.println("Added Squiggle");
     }
 
     @Override
