@@ -9,6 +9,8 @@ public class Context {
                 return new RectangleStrat();
             case "Squiggle":
                 return new SquiggleStrat();
+            case "Square":
+                return new SquareStrat();
             default:
                 return new CircleStrat();
         }
