@@ -40,10 +40,10 @@ I WANT   : To click on one corner of a rectangle, drag, and release to
 SO THAT  : I can add triangles to my canvas
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG?.003 : sainij38 : NotStarted
+TYPE     : BUG BUG?.003 : sainij38 : Finished
 NAME     : Architecture behind choosing selection mode is poor
 PRIORITY : 3
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :
+ESTIMATE : 4 days    ACTUAL : 3 days
 ISSUE    : Code is not modular and is difficult to expand. Need a better
            architecture behind selecting a drawing mode, and handling
            the drawing events. Consider some design patterns here.

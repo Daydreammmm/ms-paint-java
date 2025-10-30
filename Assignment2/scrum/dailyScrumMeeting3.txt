@@ -48,39 +48,39 @@ Oct 23,2025
 	Obstacles I face: Merge conflicts, if any.
 
 Oct 24,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Resolved issues with US1.004
+	What I will do today: Go through sprint 2 details and update the product backlog by priority
+	Obstacles I face: Understanding the requirements for sprint 2.
 
 Oct 25,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Understood sprint 2 and updated the product backlog.
+	What I will do today: Sprint planning meeting to updated sprint backlog 2.
+	Obstacles I face: Deciding how to delegate tasks.
 
 Oct 26,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Sprint planning meeting.
+	What I will do today: Understanding various design patterns to see which one is the most suitable to use.
+	Obstacles I face: Understanding complex design patterns.
 
 Oct 27,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Understanding design patterns.
+	What I will do today: Finalize a design pattern to use for BUG2.003.
+	Obstacles I face: Understanding how to effectively modify my code to implement the design pattern.
 
 Oct 28,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Finalise what design pattern to use for BUG2.003.
+	What I will do today: Implement the Strategy design pattern.
+	Obstacles I face: Bugs while trying to implement the Strategy design pattern.
 
 Oct 29,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Implemented the strategy design pattern.
+	What I will do today: Try to make the ShapeChooserPanel more modular.
+	Obstacles I face: Figuring out how to achieve increased modularity in the ShapeChoosePanel
 
 Oct 30,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Made ShapeChooserPanel more modular.
+	What I will do today: Merge onto Master and do final checks with the team.
+	Obstacles I face: Merge conflicts.
 
 Oct 31,2025
 	What I did yesterday:
