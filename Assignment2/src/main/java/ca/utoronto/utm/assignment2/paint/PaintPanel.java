@@ -39,6 +39,8 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
     @Override
     public void handle(MouseEvent mouseEvent) {
         EventType<MouseEvent> mouseEventType = (EventType<MouseEvent>) mouseEvent.getEventType();
+
+        if(drawingStrat==null){return;}
         if (mouseEventType==MouseEvent.MOUSE_PRESSED) {
             drawingStrat.mousePressed(mouseEvent, model);
         } else if (mouseEventType==MouseEvent.MOUSE_RELEASED) {
