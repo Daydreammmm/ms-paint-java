@@ -29,6 +29,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
         this.addEventHandler(MouseEvent.MOUSE_MOVED, this);
         this.addEventHandler(MouseEvent.MOUSE_CLICKED, this);
         this.addEventHandler(MouseEvent.MOUSE_DRAGGED, this);
+        this.setMode("Circle"); // initial tool
     }
 
     public void setMode(String mode){
@@ -92,6 +93,17 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
             double height = r.getHeight();
             g2d.strokeRect(x, y, width, height);
             g2d.fillRect(x, y, width, height);
+        }
+        // Draw Ovals
+        g2d.setStroke(Color.ORANGE);
+        g2d.setFill(Color.ORANGE);
+        for (Oval oval : this.model.getOvals()) {
+            double x = oval.getTopLeft().x;
+            double y = oval.getTopLeft().y;
+            double width = oval.getWidth();
+            double height = oval.getHeight();
+            g2d.strokeOval(x, y, width, height);
+            g2d.fillOval(x, y, width, height);
         }
 
         ArrayList<Square> squares = this.model.getSquares();

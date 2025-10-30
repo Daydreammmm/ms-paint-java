@@ -11,6 +11,8 @@ public class Context {
                 return new SquiggleStrat();
             case "Square":
                 return new SquareStrat();
+            case "Oval":
+                return new OvalStrat();
             default:
                 return new CircleStrat();
         }
