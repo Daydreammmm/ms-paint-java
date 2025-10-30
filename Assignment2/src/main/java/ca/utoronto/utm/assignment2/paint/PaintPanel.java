@@ -92,6 +92,18 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
             g2d.fillRect(x, y, width, height);
         }
 
+        ArrayList<Square> squares = this.model.getSquares();
+        g2d.setStroke(Color.PURPLE);
+        g2d.setFill(Color.PURPLE);
+        for (Square s : squares) {
+            double x = s.getTopLeft().x;
+            double y = s.getTopLeft().y;
+            double a = s.getSide();
+            g2d.strokeRect(x, y, a, a);
+            g2d.fillRect(x, y, a, a);
+        }
+
+
         drawingStrat.drawMidConstruction(g2d);
     }
 }
