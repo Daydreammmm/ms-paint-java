@@ -7,7 +7,7 @@ public final class Context {
             case "Circle":
                 return new CircleStrat();
             case "Rectangle":
-                return new RectangleStrat();g
+                return new RectangleStrat();
             case "Squiggle":
                 return new SquiggleStrat();
             case "Square":
