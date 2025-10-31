@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
+
 public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Observer {
     private DrawingStrat drawingStrat;
     private PaintModel model;
@@ -32,7 +33,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
     }
 
     public void setMode(String mode){
-        this.drawingStrat = Context.getDrawingStrat(mode);
+        this.drawingStrat = Context.getDrawingStrat(mode, this.model);
         System.out.println(mode);
     }
 
@@ -104,6 +105,13 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
             g2d.strokeRect(x, y, a, a);
             g2d.fillRect(x, y, a, a);
         }
+
+        // Draw Triangles
+        ArrayList<Triangle> triangles = this.model.getTriangles();
+        for (Triangle t : triangles) {
+            t.draw(g2d);
+        }
+
 
 
         drawingStrat.drawMidConstruction(g2d);
