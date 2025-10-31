@@ -42,44 +42,68 @@ Oct 22,2025
     Obstacles I face: None.
 
 Oct 23,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+    What I did yesterday:
+    Reviewed the "Draw Oval" user story and looked at how shapes are currently drawn.
+    What I will do today:
+    Plan how to add an Oval shape (data model, drawing logic, UI).
+    Obstacles I face:
+    Still learning how the drawing strategies and repaint flow work.
 
-Oct 24,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Oct 24, 2025
+    What I did yesterday:
+    Looked at existing code for Circle/Rectangle.
+    What I will do today:
+    Create an Oval class (top-left, width, height) and start an OvalStrat for drag-to-draw.
+    Obstacles I face:
+    Need to handle dragging in any direction.
 
 Oct 25,2025
 	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+    Added Oval.java.
+    What I will do today:
+    Update PaintModel to store ovals (list of ovals, addOval, getOvals, notify observers).
+    Obstacles I face:
+    Making sure I don’t break circles/rectangles.
 
 Oct 26,2025
 	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+    Added Oval support to PaintModel.
+    What I will do today:
+    Finish OvalStrat (mousePressed/Dragged/Released + preview while dragging).
+    Obstacles I face:
+    Making sure preview works correctly.
 
 Oct 27,2025
 	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+    Finished OvalStrat.
+    What I will do today:
+    Update PaintPanel.update() to actually draw saved ovals with strokeOval/fillOval.
+    Obstacles I face:
+    Getting the draw order right.
 
 Oct 28,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	PaintPanel now draws ovals.
+    What I will do today:
+    Hook up the UI: add “Oval” to ShapeChooserPanel and make sure it calls setMode("Oval").
+    Obstacles I face:
+    Mode string has to match everywhere.
 
 Oct 29,2025
 	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+    Added "Oval" case to Context so it returns new OvalStrat().
+    Set a default mode in PaintPanel so it doesn’t crash on first click.
+    What I will do today:
+    Fix compile error in PaintPanel by renaming the loop var from o to oval.
+    Obstacles I face:
+
 
 Oct 30,2025
 	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+    Fixed compile error and tested Oval drawing end-to-end.
+    What I will do today:
+    Final cleanup and submit.
+    Obstacles I face:
+    None now. Oval drawing works.
 
 Oct 31,2025
 	What I did yesterday:

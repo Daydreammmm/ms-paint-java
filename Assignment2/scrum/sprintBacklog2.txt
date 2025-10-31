@@ -28,10 +28,10 @@ I WANT   : To click on three vertices, click on the first vertex and drag to the
 SO THAT  : I can add triangles to my canvas
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US2.010 : harri874 : NotStarted
+TYPE     : USER STORY US2.010 : harri874 : Finished
 NAME     : Draw Oval
 PRIORITY : 1
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :
+ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL : 2 DAYS
 AS A     : user
 I WANT   : To click on one corner of a rectangle, drag, and release to
            specify two corners of a rectangle where the vertical and horizontal magnitudes are the vertical, and
