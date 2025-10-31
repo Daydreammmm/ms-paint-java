@@ -7,11 +7,11 @@ public final class Context {
             case "Circle":
                 return new CircleStrat();
             case "Rectangle":
-                return new RectangleStrat();
-            case "Square":
-                return new SquareStrat();
+                return new RectangleStrat();g
             case "Squiggle":
                 return new SquiggleStrat();
+            case "Square":
+                return new SquareStrat();
             case "Triangle":
                 return new TriangleStrat(model);
             default:
