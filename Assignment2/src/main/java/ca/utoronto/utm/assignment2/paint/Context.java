@@ -1,8 +1,9 @@
 package ca.utoronto.utm.assignment2.paint;
 
-public class Context {
-    public static DrawingStrat getDrawingStrat(String mode) {
-        switch(mode) {
+public final class Context {
+
+    public static DrawingStrat getDrawingStrat(String mode, PaintModel model) {
+        switch (mode) {
             case "Circle":
                 return new CircleStrat();
             case "Rectangle":
