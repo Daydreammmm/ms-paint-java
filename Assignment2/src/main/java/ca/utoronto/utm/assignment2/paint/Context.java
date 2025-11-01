@@ -10,6 +10,8 @@ public final class Context {
                 return new RectangleStrat();
             case "Squiggle":
                 return new SquiggleStrat();
+            case "Triangle":
+                return new TriangleStrat(model);
             case "Square":
                 return new SquareStrat();
             case "Oval":
