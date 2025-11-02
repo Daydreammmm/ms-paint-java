@@ -25,7 +25,7 @@ public class Triangle {
         g.setStroke(Color.BLACK);
         g.strokePolygon(xs, ys, 3);
         // if you want fill later:
-        // g.setFill(Color.color(0,0,0,0)); // transparent for now
-        // g.fillPolygon(xs, ys, 3);
+         g.setFill(Color.BLACK); // transparent for now
+         g.fillPolygon(xs, ys, 3);
     }
 }
