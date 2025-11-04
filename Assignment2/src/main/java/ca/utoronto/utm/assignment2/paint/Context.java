@@ -16,8 +16,6 @@ public final class Context {
                 return new SquareStrat();
             case "Oval":
                 return new OvalStrat();
-            case "Triangle":
-                return new TriangleStrat(model);
             default:
                 return new CircleStrat();
         }
