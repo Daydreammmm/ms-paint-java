@@ -37,53 +37,53 @@ Oct 21,2025
 	Obstacles I face: Troubleshooting the branch pushing and committing
 
 Oct 22,2025
-	What I did yesterday: Created the branch and fix mistakes
-	What I will do today: Study for the midterm
+	What I did yesterday:
+	What I will do today:
 	Obstacles I face:
 
 Oct 23,2025
-	What I did yesterday: Study for the midterm
-	What I will do today: Study for the midterm
+	What I did yesterday:
+	What I will do today:
 	Obstacles I face:
 
 Oct 24,2025
-	What I did yesterday: Study for the midterm
-	What I will do today: Study for the midterm
+	What I did yesterday:
+	What I will do today:
 	Obstacles I face:
 
 Oct 25,2025
-	What I did yesterday: Study for the midterm
-	What I will do today: Write the midterm
-	Obstacles I face: Midterm
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
 
 Oct 26,2025
-	What I did yesterday: Write the midterm
-	What I will do today: Hackathon
+	What I did yesterday:
+	What I will do today:
 	Obstacles I face:
 
 Oct 27,2025
-	What I did yesterday: Hackathon
-	What I will do today: Resting
+	What I did yesterday:
+	What I will do today:
 	Obstacles I face:
 
 Oct 28,2025
-	What I did yesterday: Resting
-	What I will do today: Started by creating the branch then creating a square class
-	Obstacles I face: Square class was not working too well
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
 
 Oct 29,2025
-	What I did yesterday: Started by creating the branch then creating a square class
-	What I will do today: Merged my branch + changed up my code to fit the other sprint
-	Obstacles I face: Changing my code up
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
 
 Oct 30,2025
-	What I did yesterday: Merged my branch + changed up my code to fit the other sprint
-	What I will do today: Nothing
+	What I did yesterday:
+	What I will do today:
 	Obstacles I face:
 
 Oct 31,2025
-	What I did yesterday: Nothing
-	What I will do today: Nothing
+	What I did yesterday:
+	What I will do today:
 	Obstacles I face:
 
 Nov 1,2025
