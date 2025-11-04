@@ -5,7 +5,7 @@
 # Sprint 2 Oct 24-Oct 30, 2025
 # Sprint 2 Backlog UserStories go below
 --------------------------------------------------------------------------
-TYPE     : USER STORY US2.008 : mallasus : NotStarted
+TYPE     : USER STORY US2.008 : mallasus : Finished
 NAME     : Draw Square
 PRIORITY : 1
 ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :
