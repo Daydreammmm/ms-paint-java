@@ -36,75 +36,75 @@ Oct 21,2025
 	What I will do today: create the us1.003 branch and fix my mistakes, figured out how to commit and push to remote properly
 	Obstacles I face: Troubleshooting the branch pushing and committing
 
-Oct 22,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Oct 22, 2025
+    What I did yesterday: Fixed branch issues and confirmed remote pushes were working properly.
+    What I will do today: Begin reading and understanding the code related to shape-drawing features.
+    Obstacles I face: Figuring out how the existing drawing strategies connect to each shape.
 
-Oct 23,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Oct 23, 2025
+    What I did yesterday: Reviewed how Circle, Rectangle, and Square strategies were implemented.
+    What I will do today: Start outlining how to implement the Draw Triangle function.
+    Obstacles I face: Unsure which files need to be modified for a new shape strategy.
 
-Oct 24,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Oct 24, 2025
+    What I did yesterday: Outlined steps for Draw Triangle implementation.
+    What I will do today: Begin coding the Triangle strategy class.
+    Obstacles I face: Difficulty getting the coordinates to update correctly while dragging.
 
-Oct 25,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Oct 25, 2025
+    What I did yesterday: Started Triangle strategy class.
+    What I will do today: Debug the drawing logic and ensure the triangle appears properly on the canvas.
+    Obstacles I face: Handling mouse events for three vertices accurately.
 
-Oct 26,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Oct 26, 2025
+    What I did yesterday: Debugged the triangle drawing; shape now appears but not filling correctly.
+    What I will do today: Work on adding the fill functionality for Triangle.
+    Obstacles I face: Unsure how fill color interacts with JavaFX Polygon.
 
-Oct 27,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Oct 27, 2025
+    What I did yesterday: Implemented and tested basic triangle fill; works but color persists incorrectly.
+    What I will do today: Fix fill color reset and clean up draw logic.
+    Obstacles I face: Maintaining consistent color when switching between shapes.
 
-Oct 28,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Oct 28, 2025
+    What I did yesterday: Cleaned up fill logic and color consistency.
+    What I will do today: Finalize and refactor Triangle strategy; prepare for commit.
+    Obstacles I face: Minor graphical offset during drag; testing across different resolutions.
 
-Oct 29,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Oct 29, 2025
+    What I did yesterday: Finalized Triangle draw and fill; tested integration with existing strategies.
+    What I will do today: Commit, push, and verify code on remote repository.
+    Obstacles I face: Merge conflicts while rebasing from main branch.
 
-Oct 30,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Oct 30, 2025
+    What I did yesterday: Resolved merge conflicts and confirmed Triangle feature works.
+    What I will do today: Write brief documentation/comments for Triangle strategy.
+    Obstacles I face: Ensuring comments follow project documentation format.
 
-Oct 31,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Oct 31, 2025
+    What I did yesterday: Finished Triangle feature and tested again; started reviewing term-test materials.
+    What I will do today: Focus on studying for CSC207 term test.
+    Obstacles I face: Balancing test prep with ongoing project tasks.
 
-Nov 1,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Nov 1, 2025
+    What I did yesterday: Studied for term test; reviewed JavaFX and MVC concepts.
+    What I will do today: Take term test and check repository for any pending reviews.
+    Obstacles I face: Time management for both studying and review tasks.
 
-Nov 2,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Nov 2, 2025
+    What I did yesterday: Completed term test; reviewed code quality feedback.
+    What I will do today: Address small code cleanup tasks after test.
+    Obstacles I face: Minor confusion with Git branching after merging.
 
-Nov 3,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Nov 3, 2025
+    What I did yesterday: Cleaned and pushed final Triangle feature updates.
+    What I will do today: Verify everything builds correctly and functions as expected.
+    Obstacles I face: Testing edge cases in drawing (e.g., small or overlapping triangles).
 
-Nov 4,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Nov 4, 2025
+    What I did yesterday: Verified Triangle feature functionality.
+    What I will do today: Plan next steps and review peer feedback on the feature.
+    Obstacles I face: None major — only ensuring code consistency with team standards.
 
 Nov 5,2025
 	What I did yesterday:
