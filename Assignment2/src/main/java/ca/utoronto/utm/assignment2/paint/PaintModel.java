@@ -2,6 +2,8 @@ package ca.utoronto.utm.assignment2.paint;
 
 import java.util.ArrayList;
 import java.util.Observable;
+import javafx.scene.paint.Color;
+
 
 public class PaintModel extends Observable {
         private ArrayList<Point> points=new ArrayList<Point>();
@@ -10,9 +12,19 @@ public class PaintModel extends Observable {
         private ArrayList<Oval> ovals = new ArrayList<Oval>();
         private ArrayList<Square> squares = new ArrayList<Square>();
         private ArrayList<Triangle> triangles = new ArrayList<Triangle>();
+        private Color currentColor = Color.BLACK;
 
 
-        public void addPoint(Point p){
+
+    public Color getCurrentColor() {
+        return currentColor;
+    }
+
+    public void setCurrentColor(Color color) {
+        this.currentColor = color;
+    }
+
+    public void addPoint(Point p){
                 this.points.add(p);
                 this.setChanged();
                 this.notifyObservers();
