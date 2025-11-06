@@ -29,7 +29,7 @@ public class CircleStrat implements DrawingStrat{
     @Override
     public void mouseReleased(MouseEvent e, PaintModel model) {
         if(circle != null) {
-            model.addCircle(circle);
+            model.addShape(circle);
             System.out.println("Added circle");
             circle = null;
         }

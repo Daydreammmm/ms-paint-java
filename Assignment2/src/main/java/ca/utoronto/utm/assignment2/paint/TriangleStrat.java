@@ -45,7 +45,7 @@ public class TriangleStrat implements DrawingStrat {
             // confirm third vertex and commit the shape
             double x3 = e.getX(), y3 = e.getY();
             Triangle t = new Triangle(x1, y1, x2, y2, x3, y3, model.getCurrentColor());
-            this.model.addTriangle(t);
+            this.model.addShape(t);
             // reset for the next triangle
             stage = 0;
         }

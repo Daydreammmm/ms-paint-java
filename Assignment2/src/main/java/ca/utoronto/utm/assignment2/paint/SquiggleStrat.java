@@ -5,16 +5,18 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
 public class SquiggleStrat implements DrawingStrat {
+    private Squiggle squiggle;
 
     @Override
     public void mousePressed(MouseEvent e, PaintModel model) {
-        model.addPoint(new Point(Double.NaN, Double.NaN));
+        squiggle = new Squiggle(model.getCurrentColor());
         System.out.println("Started Squiggle");
     }
 
     @Override
     public void mouseDragged(MouseEvent e, PaintModel model) {
-        model.addPoint(new Point(e.getX(), e.getY()));
+        squiggle.addPoint(new Point(e.getX(), e.getY()));
+        model.addShape(squiggle);
         System.out.println("Added Squiggle");
     }
 

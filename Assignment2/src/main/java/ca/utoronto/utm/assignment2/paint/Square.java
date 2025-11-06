@@ -1,8 +1,9 @@
 package ca.utoronto.utm.assignment2.paint;
 
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
-public class Square {
+public class Square implements Shape {
     private Point topLeft;
     private double side;
     private final Color color;
@@ -21,5 +22,15 @@ public class Square {
 
     public Color getColor(){
         return color;
+    }
+
+    public void draw(GraphicsContext g2d) {
+        g2d.setStroke(color);
+        g2d.setFill(color);
+        double x = this.getTopLeft().x;
+        double y = this.getTopLeft().y;
+        double a = this.getSide();
+        g2d.strokeRect(x, y, a, a);
+        g2d.fillRect(x, y, a, a);
     }
 }
