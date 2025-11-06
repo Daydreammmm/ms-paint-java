@@ -50,7 +50,7 @@ public class View implements EventHandler<ActionEvent> {
                 return this.paintModel;
         }
 
-        // ugly way to do this?
+    // ugly way to do this?
         public void setMode(String mode){
             this.paintPanel.setMode(mode);
         }

@@ -34,6 +34,22 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
             this.add(button, 0, row);
             row++;
         }
+        // toggle between fill and outline
+        Button fillToggle = new Button("Outline Mode"); // default
+        fillToggle.setMinWidth(100);
+        fillToggle.setMinHeight(40);
+
+        fillToggle.setOnAction(e -> {
+            this.view.getPaintModel().toggleFillMode(); // access PaintModel through View
+            if (this.view.getPaintModel().isFillMode()) {
+                fillToggle.setText("Fill Mode");
+            } else {
+                fillToggle.setText("Outline Mode");
+            }
+            System.out.println("Fill mode: " + this.view.getPaintModel().isFillMode());
+        });
+
+        this.add(fillToggle, 0, row);
     }
 
     @Override

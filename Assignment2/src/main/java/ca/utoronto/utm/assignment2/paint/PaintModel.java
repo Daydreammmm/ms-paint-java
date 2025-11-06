@@ -6,9 +6,18 @@ import javafx.scene.paint.Color;
 
 
 public class PaintModel extends Observable {
-        private ArrayList<Shape> shapes = new ArrayList<Shape>();
-        private Color currentColor = Color.BLACK;
+    private ArrayList<Shape> shapes = new ArrayList<Shape>();
+    private Color currentColor = Color.BLACK;
 
+    private boolean fillMode = false;
+
+    public boolean isFillMode() {
+        return fillMode;
+    }
+
+    public void toggleFillMode() {
+        fillMode = !fillMode;
+    }
 
     public Color getCurrentColor() {
         return currentColor;

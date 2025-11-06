@@ -6,40 +6,37 @@ import javafx.scene.paint.Color;
 public class Circle implements Shape {
         private Point centre;
         private double radius;
-        private final Color color;
+        private Color color;
+        private boolean filled; // new flag
 
-        public Circle(Point centre, int radius, Color color){
+        public Circle(Point centre, double radius, Color color, boolean filled) {
                 this.centre = centre;
                 this.radius = radius;
                 this.color = color;
+                this.filled = filled;
         }
 
-        public Point getCentre() {
-                return centre;
+        public void draw(GraphicsContext g) {
+                double x = centre.x - radius;
+                double y = centre.y - radius;
+                double size = radius * 2;
+
+                g.setStroke(color);
+                g.setFill(color);
+
+                if (filled) {
+                        g.fillOval(x, y, size, size);
+                } else {
+                        g.strokeOval(x, y, size, size);
+                }
         }
 
-        public void setCentre(Point centre) {
-                this.centre = centre;
-        }
-
-        public double getRadius() {
-                return radius;
-        }
-
-        public void setRadius(double radius) {
-                this.radius = radius;
-        }
-
-        public Color getColor(){
-            return color;
-        }
-
-        @Override
-        public void draw(GraphicsContext g2d){
-            g2d.setFill(color);
-            double x = this.getCentre().x;
-            double y = this.getCentre().y;
-            double radius = this.getRadius();
-            g2d.fillOval(x - radius, y - radius, radius * 2, radius * 2);
-        }
+        // getters / setters
+        public boolean isFilled() { return filled; }
+        public void setFilled(boolean filled) { this.filled = filled; }
+        public void setRadius(double radius) { this.radius = radius; }
+        public void setColor(Color color) { this.color = color; }
+        public double getRadius() {return radius;}
+        public Color getColor() {return color;}
+        public Point getCentre() { return centre; }
 }

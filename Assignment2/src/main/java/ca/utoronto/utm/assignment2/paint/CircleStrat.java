@@ -14,8 +14,9 @@ public class CircleStrat implements DrawingStrat{
     public void mousePressed(MouseEvent e, PaintModel model) {
         System.out.println("Started Circle");
         Point centre = new Point(e.getX(), e.getY());
-        circle = new Circle(centre, 0, model.getCurrentColor());
+        circle = new Circle(centre, 0, model.getCurrentColor(), model.isFillMode());
     }
+
 
     @Override
     public void mouseDragged(MouseEvent e, PaintModel model) {
