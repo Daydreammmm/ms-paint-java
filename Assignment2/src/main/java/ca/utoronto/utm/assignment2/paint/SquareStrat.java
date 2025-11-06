@@ -11,8 +11,7 @@ public class SquareStrat implements DrawingStrat {
     @Override
     public void mousePressed(MouseEvent e, PaintModel model) {
         startPoint = new Point(e.getX(), e.getY());
-        this.square = new Square(startPoint, 0, model.getCurrentColor());
-        System.out.println("Started Square");
+        square = new Square(startPoint, 0, model.getCurrentColor(), model.isFillMode());
     }
 
     @Override
@@ -21,28 +20,36 @@ public class SquareStrat implements DrawingStrat {
             double endX = e.getX();
             double endY = e.getY();
 
-            double x = endX - startPoint.x;
-            double y = endY - startPoint.y;
-            double side =  Math.max(Math.abs(x), Math.abs(y));
+            // figure out how far the mouse moved horizontally and vertically
+            double dx = Math.abs(endX - startPoint.x);
+            double dy = Math.abs(endY - startPoint.y);
 
-            double tlx = startPoint.x + (x < 0 ? -side : 0);
-            double tly = startPoint.y + (y < 0 ? -side : 0);
+            // side length should always be the larger of dx, dy
+            double side = Math.max(dx, dy);
 
-            this.square.setTopLeft(new Point(tlx, tly));
-            this.square.setSide(side);
+            double x = startPoint.x;
+            double y = startPoint.y;
 
+            // if we’re dragging left or up, shift the starting corner accordingly
+            if (endX < startPoint.x) {
+                x = startPoint.x - side;
+            }
+            if (endY < startPoint.y) {
+                y = startPoint.y - side;
+            }
+
+            square.setTopLeft(new Point(x, y));
+            square.setSide(side);
         }
     }
 
+
     @Override
     public void mouseReleased(MouseEvent e, PaintModel model) {
-        if (this.square != null) {
-            if (this.square.getSide() > 0) {
-                model.addShape(this.square);
-            }
-            System.out.println("Added Square");
-            this.square = null;
-            this.startPoint = null;
+        if (square != null) {
+            model.addShape(square);
+            square = null;
+            startPoint = null;
         }
     }
 

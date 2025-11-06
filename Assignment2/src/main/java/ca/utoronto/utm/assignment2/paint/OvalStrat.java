@@ -10,9 +10,8 @@ public class OvalStrat implements DrawingStrat {
 
     @Override
     public void mousePressed(MouseEvent e, PaintModel model) {
-        // remember where the drag started
         startPoint = new Point(e.getX(), e.getY());
-        this.oval = new Oval(startPoint, 0, 0, model.getCurrentColor());
+        oval = new Oval(startPoint, 0, 0, model.getCurrentColor(), model.isFillMode());
     }
 
     @Override
@@ -21,26 +20,23 @@ public class OvalStrat implements DrawingStrat {
             double endX = e.getX();
             double endY = e.getY();
 
-            // compute bounding box just like RectangleStrat
             double x = Math.min(startPoint.x, endX);
             double y = Math.min(startPoint.y, endY);
             double width = Math.abs(endX - startPoint.x);
             double height = Math.abs(endY - startPoint.y);
 
-            this.oval.setTopLeft(new Point(x, y));
-            this.oval.setWidth(width);
-            this.oval.setHeight(height);
+            oval.setTopLeft(new Point(x, y));
+            oval.setWidth(width);
+            oval.setHeight(height);
         }
     }
 
     @Override
     public void mouseReleased(MouseEvent e, PaintModel model) {
         if (oval != null) {
-            // commit final oval to the model
-            model.addShape(this.oval);
-            // clear temp state
-            this.oval = null;
-            this.startPoint = null;
+            model.addShape(oval);
+            oval = null;
+            startPoint = null;
         }
     }
 
