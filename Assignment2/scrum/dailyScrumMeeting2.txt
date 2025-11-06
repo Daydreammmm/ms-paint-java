@@ -109,12 +109,12 @@ Nov 4, 2025
 Nov 5,2025
 	What I did yesterday: Regrouped with my teammates and plan
 	What I will do today: Handle the pull request and writing component in the lab
-	Obstacles I face:
+	Obstacles I face: None for now
 
 Nov 6,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Finished writing component in lab
+	What I will do today: Finish my bug on giving outline modes to shapes
+	Obstacles I face: running into merge conflicts with teammates
 
 Nov 7,2025
 	What I did yesterday:
