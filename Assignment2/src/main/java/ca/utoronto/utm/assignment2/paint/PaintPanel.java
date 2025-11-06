@@ -76,8 +76,8 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
         }
 
         // Draw Circles
-        g2d.setFill(this.model.getCurrentColor());
         for(Circle c : this.model.getCircles()) {
+            g2d.setFill(c.getColor());
             double x = c.getCentre().x;
             double y = c.getCentre().y;
             double radius = c.getRadius();
@@ -85,9 +85,9 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
         }
 
         // Draw Rectangles
-        g2d.setStroke(this.model.getCurrentColor());
-        g2d.setFill(this.model.getCurrentColor());
         for(Rectangle r : this.model.getRectangles()) {
+            g2d.setStroke(r.getColor());
+            g2d.setFill(r.getColor());
             double x = r.getTopLeft().x;
             double y = r.getTopLeft().y;
             double width = r.getWidth();
@@ -95,10 +95,11 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
             g2d.strokeRect(x, y, width, height);
             g2d.fillRect(x, y, width, height);
         }
+
         // Draw Ovals
-        g2d.setStroke(this.model.getCurrentColor());
-        g2d.setFill(this.model.getCurrentColor());
         for (Oval oval : this.model.getOvals()) {
+            g2d.setStroke(oval.getColor());
+            g2d.setFill(oval.getColor());
             double x = oval.getTopLeft().x;
             double y = oval.getTopLeft().y;
             double width = oval.getWidth();
@@ -107,10 +108,11 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
             g2d.fillOval(x, y, width, height);
         }
 
+        // Draw Squares
         ArrayList<Square> squares = this.model.getSquares();
-        g2d.setStroke(this.model.getCurrentColor());
-        g2d.setFill(this.model.getCurrentColor());
         for (Square s : squares) {
+            g2d.setStroke(s.getColor());
+            g2d.setFill(s.getColor());
             double x = s.getTopLeft().x;
             double y = s.getTopLeft().y;
             double a = s.getSide();
@@ -127,8 +129,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
             t.draw(g2d);
         }
 
-
-
         drawingStrat.drawMidConstruction(g2d);
     }
+
 }
