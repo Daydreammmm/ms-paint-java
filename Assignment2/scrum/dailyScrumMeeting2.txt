@@ -107,8 +107,8 @@ Nov 4, 2025
     Obstacles I face: None major — only ensuring code consistency with team standards.
 
 Nov 5,2025
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday: Regrouped with my teammates and plan
+	What I will do today: Handle the pull request and writing component in the lab
 	Obstacles I face:
 
 Nov 6,2025
