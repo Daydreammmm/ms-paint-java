@@ -10,7 +10,6 @@ public class PaintModel extends Observable {
         private Color currentColor = Color.BLACK;
 
 
-
     public Color getCurrentColor() {
         return currentColor;
     }

@@ -68,9 +68,13 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
 
         for(int i=0; i<this.model.getShapes().size(); i++){
             Shape shape = this.model.getShapes().get(i);
-            shape.draw(g2d);
+            if(shape != null){
+                shape.draw(g2d);
+            }
         }
-        drawingStrat.drawMidConstruction(g2d);
+        if(drawingStrat!=null) {
+            drawingStrat.drawMidConstruction(g2d);
+        }
     }
 
 }
