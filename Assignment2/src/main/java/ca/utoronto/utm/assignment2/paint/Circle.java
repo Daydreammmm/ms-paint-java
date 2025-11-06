@@ -1,8 +1,9 @@
 package ca.utoronto.utm.assignment2.paint;
 
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
-public class Circle {
+public class Circle implements Shape {
         private Point centre;
         private double radius;
         private final Color color;
@@ -33,5 +34,12 @@ public class Circle {
             return color;
         }
 
-
+        @Override
+        public void draw(GraphicsContext g2d){
+            g2d.setFill(color);
+            double x = this.getCentre().x;
+            double y = this.getCentre().y;
+            double radius = this.getRadius();
+            g2d.fillOval(x - radius, y - radius, radius * 2, radius * 2);
+        }
 }

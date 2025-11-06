@@ -1,8 +1,9 @@
 package ca.utoronto.utm.assignment2.paint;
 
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
-public class Oval {
+public class Oval implements Shape {
     private Point topLeft;
     private double width;
     private double height;
@@ -41,5 +42,16 @@ public class Oval {
 
     public Color getColor(){
         return color;
+    }
+
+    public void draw(GraphicsContext g2d) {
+        g2d.setStroke(color);
+        g2d.setFill(color);
+        double x = this.getTopLeft().x;
+        double y = this.getTopLeft().y;
+        double width = this.getWidth();
+        double height = this.getHeight();
+        g2d.strokeOval(x, y, width, height);
+        g2d.fillOval(x, y, width, height);
     }
 }

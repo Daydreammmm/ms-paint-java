@@ -1,0 +1,18 @@
+--------------------------------------------------------------------------
+PULL REQUEST ID : {{PR_NUMBER}}
+AUTHOR    : sainij38
+REVIEWER    : mallasus
+DESCRIPTION    : Finished BUG3.004 - fixed architecture
+RELATED USER STORY / BUG : BUG3.004
+STATUS    : Approved and Merged
+DATE    : 2025-11-06
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+PULL REQUEST ID : {{PR_NUMBER}}
+AUTHOR    : sainij38
+REVIEWER    : mallasus
+DESCRIPTION    : Finished US3.012 - added a delete button
+RELATED USER STORY / BUG : US3.012
+STATUS    : Approved and Merged
+DATE    : 2025-11-06
+--------------------------------------------------------------------------
