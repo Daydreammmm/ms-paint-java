@@ -4,13 +4,9 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.SeparatorMenuItem;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import javafx.scene.control.ColorPicker;
 import javafx.scene.layout.HBox;
 import javafx.geometry.Insets;
 import javafx.scene.paint.Color;
@@ -30,7 +26,14 @@ public class View implements EventHandler<ActionEvent> {
 
             colorPicker.setOnAction(e -> paintModel.setCurrentColor(colorPicker.getValue()));
 
-            HBox styleBar = new HBox(10, colorPicker);
+            Button deleteButton = new Button("Delete");
+            deleteButton.setOnAction(e -> {
+                if(!paintModel.getShapes().isEmpty()) {
+                    paintModel.deleteLast();
+                }
+            });
+
+            HBox styleBar = new HBox(10, colorPicker, deleteButton);
             styleBar.setPadding(new Insets(6));
 
             BorderPane root = new BorderPane();

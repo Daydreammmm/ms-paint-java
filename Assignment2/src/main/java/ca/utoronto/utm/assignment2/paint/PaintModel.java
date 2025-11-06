@@ -25,6 +25,13 @@ public class PaintModel extends Observable {
         this.notifyObservers(shape);
     }
 
+    public void deleteLast(){
+        this.shapes.remove(this.shapes.size()-1);
+        this.setChanged();
+        this.notifyObservers();
+        System.out.println("Deleted shape");
+    }
+
     public ArrayList<Shape> getShapes() {
         return this.shapes;
     }
