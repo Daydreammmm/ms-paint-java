@@ -20,14 +20,14 @@ public class Triangle {
         this.color = color;
     }
 
-    public void draw(GraphicsContext g) {
+    public void draw(GraphicsContext g, Color color) {
         // outline only for now (matches how our other shapes look)
         double[] xs = {x1, x2, x3};
         double[] ys = {y1, y2, y3};
-        g.setStroke(Color.BLACK);
+        g.setStroke(color);
         g.strokePolygon(xs, ys, 3);
         // if you want fill later:
-         g.setFill(Color.BLACK); // transparent for now
+         g.setFill(color); // transparent for now
          g.fillPolygon(xs, ys, 3);
     }
 

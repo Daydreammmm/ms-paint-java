@@ -126,7 +126,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
         //  g2d.setStroke(this.model.getCurrentColor())
         // do g2d.setFill(this.model.getCurrentColor())
         for (Triangle t : triangles) {
-            t.draw(g2d);
+            t.draw(g2d, model.getCurrentColor());
         }
 
         drawingStrat.drawMidConstruction(g2d);
