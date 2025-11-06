@@ -11,7 +11,7 @@ public class SquareStrat implements DrawingStrat {
     @Override
     public void mousePressed(MouseEvent e, PaintModel model) {
         startPoint = new Point(e.getX(), e.getY());
-        this.square = new Square(startPoint, 0);
+        this.square = new Square(startPoint, 0, model.getCurrentColor());
         System.out.println("Started Square");
     }
 
@@ -55,7 +55,7 @@ public class SquareStrat implements DrawingStrat {
     @Override
     public void drawMidConstruction(GraphicsContext g2d) {
         if (this.square != null) {
-            g2d.setStroke(Color.PURPLE);
+            g2d.setStroke(this.square.getColor());
             double x = this.square.getTopLeft().x;
             double y = this.square.getTopLeft().y;
             double a = this.square.getSide();

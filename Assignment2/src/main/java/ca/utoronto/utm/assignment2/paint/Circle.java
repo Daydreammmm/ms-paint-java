@@ -1,5 +1,6 @@
 package ca.utoronto.utm.assignment2.paint;
 
+import javafx.scene.paint.Color;
 
 public class Circle {
         private Point centre;
@@ -27,5 +28,10 @@ public class Circle {
         public void setRadius(double radius) {
                 this.radius = radius;
         }
+
+        public Color getColor(){
+            return color;
+        }
+
 
 }

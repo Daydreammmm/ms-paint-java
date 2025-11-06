@@ -12,7 +12,7 @@ public class OvalStrat implements DrawingStrat {
     public void mousePressed(MouseEvent e, PaintModel model) {
         // remember where the drag started
         startPoint = new Point(e.getX(), e.getY());
-        this.oval = new Oval(startPoint, 0, 0);
+        this.oval = new Oval(startPoint, 0, 0, model.getCurrentColor());
     }
 
     @Override
@@ -53,7 +53,7 @@ public class OvalStrat implements DrawingStrat {
     @Override
     public void drawMidConstruction(GraphicsContext g2d) {
         if (this.oval != null) {
-            g2d.setStroke(Color.ORANGE);
+            g2d.setStroke(oval.getColor());
             // show outline while dragging
             g2d.strokeOval(
                     this.oval.getTopLeft().x,

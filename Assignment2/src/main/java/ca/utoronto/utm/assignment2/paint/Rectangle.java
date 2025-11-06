@@ -1,14 +1,18 @@
 package ca.utoronto.utm.assignment2.paint;
 
+import javafx.scene.paint.Color;
+
 public class Rectangle {
     private Point topLeft;
     private double width;
     private double height;
+    private final Color color;
 
-    public Rectangle(Point topLeft, double width, double height) {
+    public Rectangle(Point topLeft, double width, double height, Color color) {
         this.topLeft = topLeft;
         this.width = width;
         this.height = height;
+        this.color = color;
     }
 
     public Point getTopLeft() {
@@ -33,5 +37,9 @@ public class Rectangle {
 
     public void setHeight(double height) {
         this.height = height;
+    }
+
+    public Color getColor(){
+        return color;
     }
 }

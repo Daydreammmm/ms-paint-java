@@ -14,7 +14,7 @@ public class CircleStrat implements DrawingStrat{
     public void mousePressed(MouseEvent e, PaintModel model) {
         System.out.println("Started Circle");
         Point centre = new Point(e.getX(), e.getY());
-        circle = new Circle(centre, 0);
+        circle = new Circle(centre, 0, model.getCurrentColor());
     }
 
     @Override
@@ -47,7 +47,7 @@ public class CircleStrat implements DrawingStrat{
             double x = circle.getCentre().x;
             double y = circle.getCentre().y;
             double r = circle.getRadius();
-            g2d.setStroke(Color.GREEN);
+            g2d.setStroke(circle.getColor());
             g2d.strokeOval(x - r, y - r, r * 2, r * 2);
         }
     }

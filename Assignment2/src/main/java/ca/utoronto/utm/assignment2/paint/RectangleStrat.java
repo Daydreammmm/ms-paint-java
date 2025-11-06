@@ -13,7 +13,7 @@ public class RectangleStrat implements DrawingStrat {
     @Override
     public void mousePressed(MouseEvent e, PaintModel model) {
         startPoint = new Point(e.getX(), e.getY());
-        this.rectangle = new Rectangle(startPoint, 0, 0);
+        this.rectangle = new Rectangle(startPoint, 0, 0, model.getCurrentColor());
     }
 
     @Override
@@ -51,7 +51,7 @@ public class RectangleStrat implements DrawingStrat {
     @Override
     public void drawMidConstruction(GraphicsContext g2d) {
         if (this.rectangle!=null){
-            g2d.setStroke(Color.BLUE);
+            g2d.setStroke(this.rectangle.getColor());
             g2d.strokeRect(this.rectangle.getTopLeft().x, this.rectangle.getTopLeft().y,
                     this.rectangle.getWidth(), this.rectangle.getHeight());
 

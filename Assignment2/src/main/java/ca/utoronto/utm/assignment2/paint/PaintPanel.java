@@ -68,7 +68,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
 
         // Draw Lines
         ArrayList<Point> points = this.model.getPoints();
-        g2d.setStroke(Color.RED);
+        g2d.setStroke(this.model.getCurrentColor());
         for(int i = 0; i < points.size() - 1; i++) {
             Point p1 = points.get(i);
             Point p2 = points.get(i + 1);
@@ -76,7 +76,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
         }
 
         // Draw Circles
-        g2d.setFill(Color.GREEN);
+        g2d.setFill(this.model.getCurrentColor());
         for(Circle c : this.model.getCircles()) {
             double x = c.getCentre().x;
             double y = c.getCentre().y;
@@ -85,8 +85,8 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
         }
 
         // Draw Rectangles
-        g2d.setStroke(Color.BLUE);
-        g2d.setFill(Color.BLUE);
+        g2d.setStroke(this.model.getCurrentColor());
+        g2d.setFill(this.model.getCurrentColor());
         for(Rectangle r : this.model.getRectangles()) {
             double x = r.getTopLeft().x;
             double y = r.getTopLeft().y;
@@ -96,8 +96,8 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
             g2d.fillRect(x, y, width, height);
         }
         // Draw Ovals
-        g2d.setStroke(Color.ORANGE);
-        g2d.setFill(Color.ORANGE);
+        g2d.setStroke(this.model.getCurrentColor());
+        g2d.setFill(this.model.getCurrentColor());
         for (Oval oval : this.model.getOvals()) {
             double x = oval.getTopLeft().x;
             double y = oval.getTopLeft().y;
@@ -108,8 +108,8 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
         }
 
         ArrayList<Square> squares = this.model.getSquares();
-        g2d.setStroke(Color.PURPLE);
-        g2d.setFill(Color.PURPLE);
+        g2d.setStroke(this.model.getCurrentColor());
+        g2d.setFill(this.model.getCurrentColor());
         for (Square s : squares) {
             double x = s.getTopLeft().x;
             double y = s.getTopLeft().y;
@@ -120,6 +120,9 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
 
         // Draw Triangles
         ArrayList<Triangle> triangles = this.model.getTriangles();
+        // basically fill in the color once you get the chance to
+        //  g2d.setStroke(this.model.getCurrentColor())
+        // do g2d.setFill(this.model.getCurrentColor())
         for (Triangle t : triangles) {
             t.draw(g2d);
         }

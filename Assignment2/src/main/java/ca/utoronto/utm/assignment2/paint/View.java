@@ -10,21 +10,31 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.SeparatorMenuItem;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import javafx.scene.control.ColorPicker;
+import javafx.scene.layout.HBox;
+import javafx.geometry.Insets;
+import javafx.scene.paint.Color;
 
 public class View implements EventHandler<ActionEvent> {
 
         private PaintModel paintModel;
         private PaintPanel paintPanel;
         private ShapeChooserPanel shapeChooserPanel;
+        private ColorPicker colorPicker;
 
         public View(PaintModel model, Stage stage) {
             this.paintModel = model;
-
+            this.colorPicker = new ColorPicker(Color.BLACK);
             this.paintPanel = new PaintPanel(this.paintModel);
             this.shapeChooserPanel = new ShapeChooserPanel(this);
 
+            colorPicker.setOnAction(e -> paintModel.setCurrentColor(colorPicker.getValue()));
+
+            HBox styleBar = new HBox(10, colorPicker);
+            styleBar.setPadding(new Insets(6));
+
             BorderPane root = new BorderPane();
-            root.setTop(createMenuBar());
+            root.setTop(styleBar);
             root.setCenter(this.paintPanel);
             root.setLeft(this.shapeChooserPanel);
             Scene scene = new Scene(root);
