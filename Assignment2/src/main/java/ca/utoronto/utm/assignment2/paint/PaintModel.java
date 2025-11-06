@@ -10,19 +10,15 @@ public class PaintModel extends Observable {
     private Color currentColor = Color.BLACK;
 
     private boolean fillMode = false;
-
     public boolean isFillMode() {
         return fillMode;
     }
-
     public void toggleFillMode() {
         fillMode = !fillMode;
     }
-
     public Color getCurrentColor() {
         return currentColor;
     }
-
     public void setCurrentColor(Color color) {
         this.currentColor = color;
     }

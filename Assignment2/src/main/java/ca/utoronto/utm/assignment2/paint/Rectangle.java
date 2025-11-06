@@ -8,12 +8,14 @@ public class Rectangle implements Shape {
     private double width;
     private double height;
     private final Color color;
+    private boolean filled;
 
-    public Rectangle(Point topLeft, double width, double height, Color color) {
+    public Rectangle(Point topLeft, double width, double height, Color color, boolean filled) {
         this.topLeft = topLeft;
         this.width = width;
         this.height = height;
         this.color = color;
+        this.filled = filled;
     }
 
     public Point getTopLeft() {
@@ -44,15 +46,34 @@ public class Rectangle implements Shape {
         return color;
     }
 
+    public boolean isFilled() { return filled; }
+    public void setFilled(boolean filled) { this.filled = filled; }
+
     @Override
-    public void draw(GraphicsContext g2d){
-        g2d.setStroke(color);
-        g2d.setFill(color);
-        double x = this.getTopLeft().x;
-        double y = this.getTopLeft().y;
-        double width = this.getWidth();
-        double height = this.getHeight();
-        g2d.strokeRect(x, y, width, height);
-        g2d.fillRect(x, y, width, height);
+    public void draw(GraphicsContext g) {
+        g.setStroke(color);
+        g.setFill(color);
+
+        double x = topLeft.x;
+        double y = topLeft.y;
+        double w = width;
+        double h = height;
+
+        // handle negative dragging direction
+        if (w < 0) {
+            x += w;
+            w = -w;
+        }
+        if (h < 0) {
+            y += h;
+            h = -h;
+        }
+
+        if (filled) {
+            g.fillRect(x, y, w, h);
+        } else {
+            g.strokeRect(x, y, w, h);
+        }
     }
+
 }

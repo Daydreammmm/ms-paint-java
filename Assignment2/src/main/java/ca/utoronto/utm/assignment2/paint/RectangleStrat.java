@@ -13,7 +13,7 @@ public class RectangleStrat implements DrawingStrat {
     @Override
     public void mousePressed(MouseEvent e, PaintModel model) {
         startPoint = new Point(e.getX(), e.getY());
-        this.rectangle = new Rectangle(startPoint, 0, 0, model.getCurrentColor());
+        rectangle = new Rectangle(startPoint, 0, 0, model.getCurrentColor(), model.isFillMode());
     }
 
     @Override
