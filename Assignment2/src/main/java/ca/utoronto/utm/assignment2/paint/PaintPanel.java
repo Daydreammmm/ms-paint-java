@@ -66,69 +66,10 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
         GraphicsContext g2d = this.getGraphicsContext2D();
         g2d.clearRect(0, 0, this.getWidth(), this.getHeight());
 
-        // Draw Lines
-        ArrayList<Point> points = this.model.getPoints();
-        g2d.setStroke(this.model.getCurrentColor());
-        for(int i = 0; i < points.size() - 1; i++) {
-            Point p1 = points.get(i);
-            Point p2 = points.get(i + 1);
-            g2d.strokeLine(p1.x, p1.y, p2.x, p2.y);
+        for(int i=0; i<this.model.getShapes().size(); i++){
+            Shape shape = this.model.getShapes().get(i);
+            shape.draw(g2d);
         }
-
-        // Draw Circles
-        for(Circle c : this.model.getCircles()) {
-            g2d.setFill(c.getColor());
-            double x = c.getCentre().x;
-            double y = c.getCentre().y;
-            double radius = c.getRadius();
-            g2d.fillOval(x - radius, y - radius, radius * 2, radius * 2);
-        }
-
-        // Draw Rectangles
-        for(Rectangle r : this.model.getRectangles()) {
-            g2d.setStroke(r.getColor());
-            g2d.setFill(r.getColor());
-            double x = r.getTopLeft().x;
-            double y = r.getTopLeft().y;
-            double width = r.getWidth();
-            double height = r.getHeight();
-            g2d.strokeRect(x, y, width, height);
-            g2d.fillRect(x, y, width, height);
-        }
-
-        // Draw Ovals
-        for (Oval oval : this.model.getOvals()) {
-            g2d.setStroke(oval.getColor());
-            g2d.setFill(oval.getColor());
-            double x = oval.getTopLeft().x;
-            double y = oval.getTopLeft().y;
-            double width = oval.getWidth();
-            double height = oval.getHeight();
-            g2d.strokeOval(x, y, width, height);
-            g2d.fillOval(x, y, width, height);
-        }
-
-        // Draw Squares
-        ArrayList<Square> squares = this.model.getSquares();
-        for (Square s : squares) {
-            g2d.setStroke(s.getColor());
-            g2d.setFill(s.getColor());
-            double x = s.getTopLeft().x;
-            double y = s.getTopLeft().y;
-            double a = s.getSide();
-            g2d.strokeRect(x, y, a, a);
-            g2d.fillRect(x, y, a, a);
-        }
-
-        // Draw Triangles
-        ArrayList<Triangle> triangles = this.model.getTriangles();
-        // basically fill in the color once you get the chance to
-        //  g2d.setStroke(this.model.getCurrentColor())
-        // do g2d.setFill(this.model.getCurrentColor())
-        for (Triangle t : triangles) {
-            t.draw(g2d, model.getCurrentColor());
-        }
-
         drawingStrat.drawMidConstruction(g2d);
     }
 

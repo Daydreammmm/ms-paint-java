@@ -36,7 +36,7 @@ public class RectangleStrat implements DrawingStrat {
     @Override
     public void mouseReleased(MouseEvent e, PaintModel model) {
         if (rectangle != null) {
-            model.addRectangle(this.rectangle);
+            model.addShape(this.rectangle);
             this.rectangle = null;
             this.startPoint = null;
         }

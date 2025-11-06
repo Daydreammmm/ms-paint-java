@@ -37,7 +37,7 @@ public class OvalStrat implements DrawingStrat {
     public void mouseReleased(MouseEvent e, PaintModel model) {
         if (oval != null) {
             // commit final oval to the model
-            model.addOval(this.oval);
+            model.addShape(this.oval);
             // clear temp state
             this.oval = null;
             this.startPoint = null;

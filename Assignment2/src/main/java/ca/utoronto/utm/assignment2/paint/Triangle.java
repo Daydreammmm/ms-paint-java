@@ -7,7 +7,7 @@ import javafx.scene.paint.Color;
  * super simple triangle with 3 vertices and a draw() helper.
  * feel free to extend later with stroke width, fill toggle, etc.
  */
-public class Triangle {
+public class Triangle implements Shape {
     private final double x1, y1;
     private final double x2, y2;
     private final double x3, y3;
@@ -20,7 +20,7 @@ public class Triangle {
         this.color = color;
     }
 
-    public void draw(GraphicsContext g, Color color) {
+    public void draw(GraphicsContext g) {
         // outline only for now (matches how our other shapes look)
         double[] xs = {x1, x2, x3};
         double[] ys = {y1, y2, y3};
