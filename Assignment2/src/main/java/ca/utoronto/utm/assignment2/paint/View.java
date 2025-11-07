@@ -13,34 +13,34 @@ import javafx.scene.paint.Color;
 
 public class View implements EventHandler<ActionEvent> {
 
-        private PaintModel paintModel;
-        private PaintPanel paintPanel;
-        private ShapeChooserPanel shapeChooserPanel;
-        private ColorPicker colorPicker;
+    private PaintModel paintModel;
+    private PaintPanel paintPanel;
+    private ShapeChooserPanel shapeChooserPanel;
+    private ColorPicker colorPicker;
 
-        public View(PaintModel model, Stage stage) {
-            this.paintModel = model;
-            this.colorPicker = new ColorPicker(Color.BLACK);
-            this.paintPanel = new PaintPanel(this.paintModel);
-            this.shapeChooserPanel = new ShapeChooserPanel(this);
+    public View(PaintModel model, Stage stage) {
+        this.paintModel = model;
+        this.colorPicker = new ColorPicker(Color.BLACK);
+        this.paintPanel = new PaintPanel(this.paintModel);
+        this.shapeChooserPanel = new ShapeChooserPanel(this);
 
-            colorPicker.setOnAction(e -> paintModel.setCurrentColor(colorPicker.getValue()));
+        colorPicker.setOnAction(e -> paintModel.setCurrentColor(colorPicker.getValue()));
 
-            Button deleteButton = new Button("Delete");
-            deleteButton.setOnAction(e -> {
-                if(!paintModel.getShapes().isEmpty()) {
-                    paintModel.deleteLast();
-                }
-            });
+        Button deleteButton = new Button("Delete");
+        deleteButton.setOnAction(e -> {
+            if (!paintModel.getShapes().isEmpty()) {
+                paintModel.deleteLast();
+            }
+        });
 
-            Button undoButton = new Button("Undo");
-            undoButton.setOnAction(e -> paintModel.undo());
+        Button undoButton = new Button("Undo");
+        undoButton.setOnAction(e -> paintModel.undo());
 
-            Button redoButton = new Button("Redo");
-            redoButton.setOnAction(e -> paintModel.redo());
+        Button redoButton = new Button("Redo");
+        redoButton.setOnAction(e -> paintModel.redo());
 
-            HBox styleBar = new HBox(10, colorPicker, undoButton, redoButton, deleteButton);
-            styleBar.setPadding(new Insets(6));
+        HBox styleBar = new HBox(10, colorPicker, undoButton, redoButton, deleteButton);
+        styleBar.setPadding(new Insets(6));
 
             BorderPane root = new BorderPane();
             root.setTop(styleBar);
@@ -52,9 +52,9 @@ public class View implements EventHandler<ActionEvent> {
             stage.show();
         }
 
-        public PaintModel getPaintModel() {
-                return this.paintModel;
-        }
+    public PaintModel getPaintModel() {
+        return this.paintModel;
+    }
 
     // ugly way to do this?
         public void setMode(String mode){
@@ -62,63 +62,63 @@ public class View implements EventHandler<ActionEvent> {
         }
         private MenuBar createMenuBar() {
 
-                MenuBar menuBar = new MenuBar();
-                Menu menu;
-                MenuItem menuItem;
+        MenuBar menuBar = new MenuBar();
+        Menu menu;
+        MenuItem menuItem;
 
-                // A menu for File
+        // A menu for File
 
-                menu = new Menu("File");
+        menu = new Menu("File");
 
-                menuItem = new MenuItem("New");
-                menuItem.setOnAction(this);
-                menu.getItems().add(menuItem);
+        menuItem = new MenuItem("New");
+        menuItem.setOnAction(this);
+        menu.getItems().add(menuItem);
 
-                menuItem = new MenuItem("Open");
-                menuItem.setOnAction(this);
-                menu.getItems().add(menuItem);
+        menuItem = new MenuItem("Open");
+        menuItem.setOnAction(this);
+        menu.getItems().add(menuItem);
 
-                menuItem = new MenuItem("Save");
-                menuItem.setOnAction(this);
-                menu.getItems().add(menuItem);
+        menuItem = new MenuItem("Save");
+        menuItem.setOnAction(this);
+        menu.getItems().add(menuItem);
 
-                menu.getItems().add(new SeparatorMenuItem());
+        menu.getItems().add(new SeparatorMenuItem());
 
-                menuItem = new MenuItem("Exit");
-                menuItem.setOnAction(this);
-                menu.getItems().add(menuItem);
+        menuItem = new MenuItem("Exit");
+        menuItem.setOnAction(this);
+        menu.getItems().add(menuItem);
 
-                menuBar.getMenus().add(menu);
+        menuBar.getMenus().add(menu);
 
-                // Another menu for Edit
+        // Another menu for Edit
 
-                menu = new Menu("Edit");
+        menu = new Menu("Edit");
 
-                menuItem = new MenuItem("Cut");
-                menuItem.setOnAction(this);
-                menu.getItems().add(menuItem);
+        menuItem = new MenuItem("Cut");
+        menuItem.setOnAction(this);
+        menu.getItems().add(menuItem);
 
-                menuItem = new MenuItem("Copy");
-                menuItem.setOnAction(this);
-                menu.getItems().add(menuItem);
+        menuItem = new MenuItem("Copy");
+        menuItem.setOnAction(this);
+        menu.getItems().add(menuItem);
 
-                menuItem = new MenuItem("Paste");
-                menuItem.setOnAction(this);
-                menu.getItems().add(menuItem);
+        menuItem = new MenuItem("Paste");
+        menuItem.setOnAction(this);
+        menu.getItems().add(menuItem);
 
-                menu.getItems().add(new SeparatorMenuItem());
-                menuItem = new MenuItem("Undo");
-                menuItem.setOnAction(this);
-                menu.getItems().add(menuItem);
+        menu.getItems().add(new SeparatorMenuItem());
+        menuItem = new MenuItem("Undo");
+        menuItem.setOnAction(this);
+        menu.getItems().add(menuItem);
 
-                menuItem = new MenuItem("Redo");
-                menuItem.setOnAction(this);
-                menu.getItems().add(menuItem);
+        menuItem = new MenuItem("Redo");
+        menuItem.setOnAction(this);
+        menu.getItems().add(menuItem);
 
-                menuBar.getMenus().add(menu);
+        menuBar.getMenus().add(menu);
 
-                return menuBar;
-        }
+        return menuBar;
+    }
 
 
         @Override
