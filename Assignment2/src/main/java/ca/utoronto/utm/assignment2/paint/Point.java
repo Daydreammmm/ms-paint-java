@@ -5,6 +5,8 @@ import javafx.scene.paint.Color;
 
 public class Point {
         double x, y;// Available to our package
+        double thickness;
+
         Point(double x, double y){
                 this.x=x; this.y=y;
         }
