@@ -106,39 +106,39 @@ Oct 30,2025
     None now. Oval drawing works.
 
 Oct 31,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+    What I did yesterday: Reviewed backlog and notes.
+    What I will do today: Understand different ways to approach US3.011 (Polyline) and US3.013 (Undo/Redo).
+    Obstacles I face: Clarifying requirements and expected interactions.
 
 Nov 1,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+    What I did yesterday: Looked into approaches for US3.011.
+    What I will do today: Explore basic implementations for US3.011 and confirm a direction.
+    Obstacles I face: Choosing between multiple design options.
 
 Nov 2,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+    What I did yesterday: Investigated and drafted changes for US3.011.
+    What I will do today: Continue work on US3.011 and do initial tests.
+    Obstacles I face: Minor issues during testing.
 
 Nov 3,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Completed a first pass on US3.011.
+    What I will do today: Start design and scope for US3.013.
+    Obstacles I face: Understanding how history should behave across actions.
 
 Nov 4,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Began implementing US3.013.
+    What I will do today: Hook up basic interactions for US3.013 and verify simple flows.
+    Obstacles I face: Potential inconsistencies with ordering and updates.
 
 Nov 5,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Continued work on US3.013 and wiring.
+    What I will do today: Do more tests on US3.013 and prepare to integrate.
+    Obstacles I face: Possible edge cases and minor errors.
 
 Nov 6,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Finalized tests and checks for US3.013.
+    What I will do today: Coordinate and push changes for US3.011 and US3.013 for review.
+    Obstacles I face: Possible merge conflicts.
 
 Nov 7,2025
 	What I did yesterday:

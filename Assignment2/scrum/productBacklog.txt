@@ -213,7 +213,7 @@ I WANT   : To click on three vertices, click on the first vertex and drag to the
 SO THAT  : I can add triangles to my canvas
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US2.010 : harri874 : NotStarted
+TYPE     : USER STORY US2.010 : harri874 : Finished
 NAME     : Draw Oval
 PRIORITY : 1
 ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :
@@ -225,7 +225,7 @@ I WANT   : To click on one corner of a rectangle, drag, and release to
 SO THAT  : I can add Ovals to my canvas
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US3.011 : harri874 : NotStarted
+TYPE     : USER STORY US3.011 : harri874 : Finished
 NAME     : Draw Polyline
 PRIORITY : 1
 ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :
@@ -246,7 +246,7 @@ I WANT   : To have a delete option that allows me to remove the shape drawn last
 SO THAT  : I can delete shapes on my canvas
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US3.013 : harri874 : NotStarted
+TYPE     : USER STORY US3.013 : harri874 : Finished
 NAME     : Undo option
 PRIORITY : 1
 ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :

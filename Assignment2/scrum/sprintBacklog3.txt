@@ -88,10 +88,10 @@ I WANT   : To be able to select the current line thickness, to be applied
 SO THAT  :
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US3.011 : harri874 : NotStarted
+TYPE     : USER STORY US3.011 : harri874 : Finished
 NAME     : Draw Polyline
 PRIORITY : 1
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :
+ESTIMATE : 2 hours    ACTUAL : 2 hours
 AS A     : user
 I WANT   : To click multiple points on the canvas to define multiple connected line segments, where each click defines
            a vertex that the line segments are connected at. Clicking on point and moving the mouse should display the
@@ -109,10 +109,10 @@ I WANT   : To have a delete option that allows me to remove the shape drawn last
 SO THAT  : I can delete shapes on my canvas
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US3.013 : harri874 : NotStarted
+TYPE     : USER STORY US3.013 : harri874 : Finished
 NAME     : Undo option
 PRIORITY : 1
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :
+ESTIMATE : 1 day   ACTUAL : 2 hours
 AS A     : user
 I WANT   : To have an undo option that takes the board to the immediate previous state from it's current state.
            The most recent action from the canvas is removed such as drawing, deleting, etc.
