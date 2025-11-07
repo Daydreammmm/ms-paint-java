@@ -15,11 +15,6 @@ public class Polyline implements Shape {
     public Color getColor() { return color; }
 
     @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
-    }
-
-    @Override
     public void draw(GraphicsContext g) {
         if (points.size() < 2) return;
         g.setStroke(color);
