@@ -16,6 +16,8 @@ public final class Context {
                 return new SquareStrat();
             case "Oval":
                 return new OvalStrat();
+            case "Polyline":
+                return new PolylineStrat();
             default:
                 return new CircleStrat();
         }
