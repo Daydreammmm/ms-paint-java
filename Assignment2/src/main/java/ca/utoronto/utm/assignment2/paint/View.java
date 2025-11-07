@@ -33,7 +33,13 @@ public class View implements EventHandler<ActionEvent> {
                 }
             });
 
-            HBox styleBar = new HBox(10, colorPicker, deleteButton);
+            Button undoButton = new Button("Undo");
+            undoButton.setOnAction(e -> paintModel.undo());
+
+            Button redoButton = new Button("Redo");
+            redoButton.setOnAction(e -> paintModel.redo());
+
+            HBox styleBar = new HBox(10, colorPicker, undoButton, redoButton, deleteButton);
             styleBar.setPadding(new Insets(6));
 
             BorderPane root = new BorderPane();
