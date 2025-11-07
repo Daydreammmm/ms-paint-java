@@ -146,10 +146,10 @@ ISSUE    : Code is not modular and is difficult to expand. Need a better
            'if' blocks in the PaintPanel mouse event code.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG3.004 : sainij38 : NotStarted
+TYPE     : BUG BUG3.004 : sainij38 : Finished
 NAME     : Architecture behind Model is poor
 PRIORITY : 3
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :
+ESTIMATE : 2 days    ACTUAL : 3 days
 ISSUE    : Having a list of different types of drawable things in the
            model is cumbersome. In fact, it is currently incorrect, with
            Squiggle's not drawing properly. Need to re-architect the Model
@@ -236,10 +236,10 @@ I WANT   : To click multiple points on the canvas to define multiple connected l
 SO THAT  : I can add Polylines to my canvas
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US3.012 : sainij38 : NotStarted
+TYPE     : USER STORY US3.012 : sainij38 : Finished
 NAME     : Delete option
 PRIORITY : 1
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :
+ESTIMATE : 2 days    ACTUAL : 3 days
 AS A     : user
 I WANT   : To have a delete option that allows me to remove the shape drawn last from the canvas. If the canvas is
            empty, clicking the delete button doesn't do anything i.e. the canvas remains empty.
@@ -265,10 +265,10 @@ I WANT   : To have a clear option that deletes all the drawings/shapes on my can
 SO THAT  : I can clear my canvas to start afresh.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US3.015 : sainij38 : NotStarted
+TYPE     : USER STORY US3.015 : sainij38 : Finished
 NAME     : PullRequests file creation
 PRIORITY : 1
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :
+ESTIMATE : 1 day    ACTUAL : 1 day
 AS A     : developer
 I WANT   : To have a PullRequests.txt file in scrum that tracks pull requests and their authors, reviewers, and current
            status.

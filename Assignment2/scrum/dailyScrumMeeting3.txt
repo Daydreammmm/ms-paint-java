@@ -83,39 +83,39 @@ Oct 30,2025
 	Obstacles I face: Merge conflicts.
 
 Oct 31,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Merged code onto master and final checks with the team.
+	What I will do today: Sprint planning meeting for sprint 3 with the team.
+	Obstacles I face: Distribution of tasks and brainstorming new features to be added.
 
 Nov 1,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Sprint planning meeting for sprint 3.
+	What I will do today: Understand different ways to implement BUG3.004.
+	Obstacles I face: Understanding different techniques and design patterns to implement BUG3.004.
 
 Nov 2,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Understand methods to implement BUG3.004.
+	What I will do today: Understand how pull requests work.
+	Obstacles I face: How to effectively use pull requests to facilitate correct merging of code onto master.
 
 Nov 3,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Understand how pull requests work.
+	What I will do today: Create the pullRequests.txt file.
+	Obstacles I face: Coordination with the team to make sure everyone correctly understands how pull requests work.
 
 Nov 4,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Create the pullRequests.txt file.
+	What I will do today: Implement BUG3.004.
+	Obstacles I face: Possible errors while implementing BUG3.004
 
 Nov 5,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Implement BUG3.004
+	What I will do today: Implement US3.012
+	Obstacles I face: Possible errors while implementing US3.012
 
 Nov 6,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Implement US3.012
+	What I will do today: Coordinate with team and merge onto master whilst doing final checks.
+	Obstacles I face: Possible merge conflicts.
 
 Nov 7,2025
 	What I did yesterday:
