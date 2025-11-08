@@ -117,14 +117,14 @@ Nov 6,2025
 	Obstacles I face: running into merge conflicts with teammates
 
 Nov 7,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Finished my bug completely and resolved all merge conflicts
+	What I will do today: Start learning more design patterns and SOLID principles
+	Obstacles I face:  None for now
 
 Nov 8,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Begin learning the design patterns and solid principles
+	What I will do today: begin talking about spring 4 with my teammates
+	Obstacles I face: coming up with creative ideas for the sprint
 
 Nov 9,2025
 	What I did yesterday:
