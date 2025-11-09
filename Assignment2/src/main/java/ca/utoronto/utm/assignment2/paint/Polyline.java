@@ -27,6 +27,10 @@ public class Polyline implements Shape {
         return color;
     }
 
+    public double getStrokeWidth() {
+        return strokeWidth;
+    }
+
     @Override
     public void draw(GraphicsContext g) {
         if (points.size() < 2) return;
