@@ -10,7 +10,7 @@ public class SquiggleStrat implements DrawingStrat {
 
     @Override
     public void mousePressed(MouseEvent e, PaintModel model) {
-        squiggle = new Squiggle(model.getCurrentColor());
+        squiggle = new Squiggle(model.getCurrentColor(), model.getCurrentStrokeWidth());
         drawing = true;
         System.out.println("Started Squiggle");
     }
@@ -18,7 +18,7 @@ public class SquiggleStrat implements DrawingStrat {
     @Override
     public void mouseDragged(MouseEvent e, PaintModel model) {
         if(drawing && squiggle != null) {
-            squiggle.addPoint(new Point(e.getX(), e.getY()));
+            squiggle.addPoint(new Point(e.getX(), e.getY(), model.getCurrentStrokeWidth()));
         }
     }
 

@@ -10,8 +10,8 @@ public class SquareStrat implements DrawingStrat {
 
     @Override
     public void mousePressed(MouseEvent e, PaintModel model) {
-        startPoint = new Point(e.getX(), e.getY());
-        square = new Square(startPoint, 0, model.getCurrentColor(), model.isFillMode());
+        startPoint = new Point(e.getX(), e.getY(), model.getCurrentStrokeWidth());
+        square = new Square(startPoint, 0, model.getCurrentColor(), model.isFillMode(), model.getCurrentStrokeWidth());
     }
 
     @Override
@@ -38,7 +38,7 @@ public class SquareStrat implements DrawingStrat {
                 y = startPoint.y - side;
             }
 
-            square.setTopLeft(new Point(x, y));
+            square.setTopLeft(new Point(x, y, model.getCurrentStrokeWidth()));
             square.setSide(side);
         }
     }

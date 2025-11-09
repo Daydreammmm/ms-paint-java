@@ -7,13 +7,15 @@ public class Circle implements Shape {
         private Point centre;
         private double radius;
         private Color color;
-        private boolean filled; // new flag
+        private boolean filled;
+        private double strokeWidth;
 
-        public Circle(Point centre, double radius, Color color, boolean filled) {
+        public Circle(Point centre, double radius, Color color, boolean filled, double strokeWidth) {
                 this.centre = centre;
                 this.radius = radius;
                 this.color = color;
                 this.filled = filled;
+                this.strokeWidth = strokeWidth;
         }
 
         public void draw(GraphicsContext g) {
@@ -23,6 +25,7 @@ public class Circle implements Shape {
 
                 g.setStroke(color);
                 g.setFill(color);
+                g.setLineWidth(strokeWidth);
 
                 if (filled) {
                         g.fillOval(x, y, size, size);
@@ -31,12 +34,35 @@ public class Circle implements Shape {
                 }
         }
 
-        // getters / setters
-        public boolean isFilled() { return filled; }
-        public void setFilled(boolean filled) { this.filled = filled; }
-        public void setRadius(double radius) { this.radius = radius; }
-        public void setColor(Color color) { this.color = color; }
-        public double getRadius() {return radius;}
-        public Color getColor() {return color;}
-        public Point getCentre() { return centre; }
+        public boolean isFilled() {
+            return filled;
+        }
+
+        public void setFilled(boolean filled) {
+            this.filled = filled;
+        }
+
+        public void setRadius(double radius) {
+            this.radius = radius;
+        }
+
+        public void setColor(Color color) {
+            this.color = color;
+        }
+
+        public double getRadius() {
+            return radius;
+        }
+
+        public Color getColor() {
+            return color;
+        }
+
+        public Point getCentre() {
+            return centre;
+        }
+
+        public double getStrokeWidth() {
+            return strokeWidth;
+        }
 }

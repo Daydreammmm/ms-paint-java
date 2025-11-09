@@ -11,6 +11,7 @@ import java.util.ArrayDeque;
 public class PaintModel extends Observable {
     private ArrayList<Shape> shapes = new ArrayList<Shape>();
     private Color currentColor = Color.BLACK;
+    private double currentStrokeWidth = 1.0;
 
     private boolean fillMode = false;
     public boolean isFillMode() {
@@ -32,6 +33,16 @@ public class PaintModel extends Observable {
         redoStack.clear();
         this.setChanged();
         this.notifyObservers(shape);
+    }
+
+    public double getCurrentStrokeWidth() {
+        return currentStrokeWidth;
+    }
+    public void setCurrentStrokeWidth(double w) {
+        if (w <= 0) return;
+        this.currentStrokeWidth = w;
+        this.setChanged();
+        this.notifyObservers();
     }
 
     public void deleteLast() {

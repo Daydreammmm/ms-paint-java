@@ -10,13 +10,15 @@ public class Oval implements Shape {
     private double height;
     private final Color color;
     private boolean filled;
+    private double strokeWidth;
 
-    public Oval(Point topLeft, double width, double height, Color color, boolean filled) {
+    public Oval(Point topLeft, double width, double height, Color color, boolean filled, double strokeWidth) {
         this.topLeft = topLeft;
         this.width = width;
         this.height = height;
         this.color = color;
         this.filled = filled;
+        this.strokeWidth = strokeWidth;
     }
 
     public void draw(GraphicsContext g) {
@@ -45,8 +47,23 @@ public class Oval implements Shape {
         this.height = height;
     }
 
-    public Paint getColor() {return color;}
-    public Point getTopLeft() {return topLeft;}
-    public double getWidth() {return width;}
-    public double getHeight() {return height;}
+    public Paint getColor() {
+        return color;
+    }
+
+    public Point getTopLeft() {
+        return topLeft;
+    }
+
+    public double getWidth() {
+        return width;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public double getStrokeWidth() {
+        return strokeWidth;
+    }
 }

@@ -10,8 +10,8 @@ public class OvalStrat implements DrawingStrat {
 
     @Override
     public void mousePressed(MouseEvent e, PaintModel model) {
-        startPoint = new Point(e.getX(), e.getY());
-        oval = new Oval(startPoint, 0, 0, model.getCurrentColor(), model.isFillMode());
+        startPoint = new Point(e.getX(), e.getY(), model.getCurrentStrokeWidth());
+        oval = new Oval(startPoint, 0, 0, model.getCurrentColor(), model.isFillMode(), model.getCurrentStrokeWidth());
     }
 
     @Override
@@ -25,7 +25,7 @@ public class OvalStrat implements DrawingStrat {
             double width = Math.abs(endX - startPoint.x);
             double height = Math.abs(endY - startPoint.y);
 
-            oval.setTopLeft(new Point(x, y));
+            oval.setTopLeft(new Point(x, y, model.getCurrentStrokeWidth()));
             oval.setWidth(width);
             oval.setHeight(height);
         }

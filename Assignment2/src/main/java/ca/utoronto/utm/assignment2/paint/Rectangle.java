@@ -9,13 +9,15 @@ public class Rectangle implements Shape {
     private double height;
     private final Color color;
     private boolean filled;
+    private double strokeWidth;
 
-    public Rectangle(Point topLeft, double width, double height, Color color, boolean filled) {
+    public Rectangle(Point topLeft, double width, double height, Color color, boolean filled, double strokeWidth) {
         this.topLeft = topLeft;
         this.width = width;
         this.height = height;
         this.color = color;
         this.filled = filled;
+        this.strokeWidth = strokeWidth;
     }
 
     public Point getTopLeft() {
@@ -46,13 +48,23 @@ public class Rectangle implements Shape {
         return color;
     }
 
-    public boolean isFilled() { return filled; }
-    public void setFilled(boolean filled) { this.filled = filled; }
+    public boolean isFilled() {
+        return filled;
+    }
+
+    public double getStrokeWidth() {
+        return strokeWidth;
+    }
+
+    public void setFilled(boolean filled) {
+        this.filled = filled;
+    }
 
     @Override
     public void draw(GraphicsContext g) {
         g.setStroke(color);
         g.setFill(color);
+        g.setLineWidth(strokeWidth);
 
         double x = topLeft.x;
         double y = topLeft.y;

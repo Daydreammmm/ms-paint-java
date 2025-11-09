@@ -7,8 +7,10 @@ public class Point {
         double x, y;// Available to our package
         double thickness;
 
-        Point(double x, double y){
-                this.x=x; this.y=y;
+        public Point(double x, double y, double thickness) {
+                this.x = x;
+                this.y = y;
+                this.thickness = (thickness > 0) ? thickness : 1.0;
         }
         public double getX() {
                 return x;
@@ -18,4 +20,7 @@ public class Point {
                 return y;
         }
 
+        public double getThickness() {
+                return thickness;
+        }
 }

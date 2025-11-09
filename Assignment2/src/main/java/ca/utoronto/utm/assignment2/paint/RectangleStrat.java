@@ -12,8 +12,8 @@ public class RectangleStrat implements DrawingStrat {
 
     @Override
     public void mousePressed(MouseEvent e, PaintModel model) {
-        startPoint = new Point(e.getX(), e.getY());
-        rectangle = new Rectangle(startPoint, 0, 0, model.getCurrentColor(), model.isFillMode());
+        startPoint = new Point(e.getX(), e.getY(), model.getCurrentStrokeWidth());
+        rectangle = new Rectangle(startPoint, 0, 0, model.getCurrentColor(), model.isFillMode(), model.getCurrentStrokeWidth());
     }
 
     @Override
@@ -27,7 +27,7 @@ public class RectangleStrat implements DrawingStrat {
             double width = Math.abs(endX - startPoint.x);
             double height = Math.abs(endY - startPoint.y);
 
-            this.rectangle.setTopLeft(new Point(x, y));
+            this.rectangle.setTopLeft(new Point(x, y, model.getCurrentStrokeWidth()));
             this.rectangle.setWidth(width);
             this.rectangle.setHeight(height);
         }
