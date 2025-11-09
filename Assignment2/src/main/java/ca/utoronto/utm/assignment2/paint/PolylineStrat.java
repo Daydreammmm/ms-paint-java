@@ -46,7 +46,6 @@ public class PolylineStrat implements DrawingStrat {
         if (hoverPoint != null && !polyline.getPoints().isEmpty()) {
             Point last = polyline.getPoints().get(polyline.getPoints().size()-1);
             g.setStroke(polyline.getColor());
-            g.setLineWidth(model.getCurrentStrokeWidth());
             g.strokeLine(last.x, last.y, hoverPoint.x, hoverPoint.y);
         }
     }

@@ -38,6 +38,7 @@ public class PaintModel extends Observable {
     public double getCurrentStrokeWidth() {
         return currentStrokeWidth;
     }
+
     public void setCurrentStrokeWidth(double w) {
         if (w <= 0) return;
         this.currentStrokeWidth = w;

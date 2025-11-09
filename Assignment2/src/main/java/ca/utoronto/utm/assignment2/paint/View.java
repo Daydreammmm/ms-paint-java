@@ -39,18 +39,34 @@ public class View implements EventHandler<ActionEvent> {
         Button redoButton = new Button("Redo");
         redoButton.setOnAction(e -> paintModel.redo());
 
-        HBox styleBar = new HBox(10, colorPicker, undoButton, redoButton, deleteButton);
+        // --- Line thickness control (Spinner from 1..20, default 1)
+        Label lineLabel = new Label("Line:");
+        Spinner<Integer> thicknessSpinner = new Spinner<>();
+        thicknessSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 20, 1));
+        thicknessSpinner.setEditable(false); // keep it simple and safe
+        thicknessSpinner.valueProperty().addListener((obs, oldVal, newVal) -> {
+            if (newVal != null) {
+                paintModel.setCurrentStrokeWidth(newVal.doubleValue());
+            }
+        });
+
+        // If you want the spinner to reflect model changes triggered elsewhere:
+        // (Optional) observe model in your panel/observer to call thicknessSpinner.getValueFactory().setValue((int)model.getCurrentStrokeWidth());
+
+        HBox styleBar = new HBox(10, colorPicker, lineLabel, thicknessSpinner, undoButton, redoButton, deleteButton);
         styleBar.setPadding(new Insets(6));
 
-            BorderPane root = new BorderPane();
-            root.setTop(styleBar);
-            root.setCenter(this.paintPanel);
-            root.setLeft(this.shapeChooserPanel);
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.setTitle("Paint");
-            stage.show();
-        }
+        BorderPane root = new BorderPane();
+        root.setTop(styleBar);
+        root.setCenter(this.paintPanel);
+        root.setLeft(this.shapeChooserPanel);
+
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle("Paint");
+        stage.show();
+    }
+
 
     public PaintModel getPaintModel() {
         return this.paintModel;
