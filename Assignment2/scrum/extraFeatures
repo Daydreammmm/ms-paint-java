@@ -1,0 +1,94 @@
+--------------------------------------------------------------------------------
+FeatureName: Move option
+
+Description:
+	Allows the user to select a shape and then move it using a mouse-drag to a desired location on the canvas.
+
+
+Reference:
+	(list of the BUG/US involved in creating this feature)
+--------------------------------------------------------------------------------
+FeatureName: Rotate option
+
+Description:
+	Allows the user to select and rotate a shape 0 to 360 degrees on the canvas.
+
+
+Reference:
+	(list of the BUG/US involved in creating this feature)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+FeatureName: Resize option
+
+Description:
+	Allows the user to select a shape on the canvas and drag the outline to resize it to a desired size.
+
+
+Reference:
+	(list of the BUG/US involved in creating this feature)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+FeatureName: Cut-Copy-Paste option
+
+Description:
+	Allows the user to select the shape and then either cut/copy the shape and paste it at a desired location on the
+	canvas. Copying the shape means that the original shape stays on the canvas, whereas cutting the shape means that
+	the original shape is removed from the canvas.
+
+
+Reference:
+	(list of the BUG/US involved in creating this feature)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+FeatureName: Keyboard Shortcuts
+
+Description:
+	Allows the user to control the paint app using various keyboard shortcuts rather than relying on mouse interaction.
+	This feature has been added as an accessibility feature for users with limited motor control due to issues such as:
+	ALS, hand tremors, and general limited hand movement. Furthermore, this feature also fosters users who prefer faster
+	interaction with the application.
+
+	The list of keyboard shortcuts is below:
+	Undo -> Ctrl+Z
+	Redo -> Ctrl+Y
+	Copy -> Ctrl+C
+	Paste -> Ctrl+V
+	Delete -> Delete
+	Move -> Arrow keys
+	Increasing/Decreasing stroke size: +\-
+	Change mode(Fill/Outline) -> M
+
+
+
+Reference:
+	(list of the BUG/US involved in creating this feature)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+FeatureName: Color Friendly Palette
+
+Description:
+	Implementing a color friendly palette for people with vision impairment problems(Deuteranopia, Protanopia and
+	general low vision). This feature has been added as an accessibility feature to allow users with Deuteranopia(Red-
+	Green color blindness), Protanopia(Red color blindness) and general low vision to be able to use the paint app
+	effectively.
+
+Reference:
+	(list of the BUG/US involved in creating this feature)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+FeatureName: Eraser
+
+Description:
+	Allows the user to select an eraser option and then delete shapes that the cursor overlaps during a mouse drag.
+Reference:
+	(list of the BUG/US involved in creating this feature)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+FeatureName: Multiple Canvases
+
+Description:
+	Allows the user to add another tab with another blank canvas to continue drawing there without impacting the
+	drawings on the first canvas.
+Reference:
+	(list of the BUG/US involved in creating this feature)
+--------------------------------------------------------------------------------

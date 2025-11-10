@@ -275,3 +275,13 @@ I WANT   : To have a PullRequests.txt file in scrum that tracks pull requests an
 SO THAT  : The team can coordinate code merges to the master branch, and ensure only clear, concise and correct code is
            on the master branch.
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US3.016 : sainij38 : NotStarted
+NAME     : extraFeatures.txt file creation
+PRIORITY : 1
+ESTIMATE : 1 day    ACTUAL :
+AS A     : developer
+I WANT   : To have a extraFeature.txt file in scrum that lists all the extra features implemented as well as the
+           relevant user stories/bugs required to implement the features.
+SO THAT  : The team can be aware of all the extra features implemented and the user stories/bugs required to add them.
+--------------------------------------------------------------------------
