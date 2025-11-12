@@ -127,19 +127,19 @@ Nov 8,2025
 	Obstacles I face: coming up with creative ideas for the sprint
 
 Nov 9,2025
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday: Discuss sprint 4
+	What I will do today: Finish studying the design patterns and SOLID
 	Obstacles I face:
 
 Nov 10,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Study design patterns and SOLID
+	What I will do today: branstorm the extra implementations we want for our project
+	Obstacles I face: Coming up with the ideas for sprint 4
 
 Nov 11,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: come up with features we want to implement
+	What I will do today:learn regex
+	Obstacles I face: memorizing the symbols
 
 Nov 12,2025
 	What I did yesterday:
