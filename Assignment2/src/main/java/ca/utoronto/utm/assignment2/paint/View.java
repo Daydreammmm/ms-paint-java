@@ -6,6 +6,7 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.scene.layout.HBox;
 import javafx.geometry.Insets;
@@ -58,7 +59,10 @@ public class View implements EventHandler<ActionEvent> {
 
         BorderPane root = new BorderPane();
         root.setTop(styleBar);
-        root.setCenter(this.paintPanel);
+        StackPane center = new StackPane(this.paintPanel);
+        root.setCenter(center);
+        this.paintPanel.widthProperty().bind(center.widthProperty());
+        this.paintPanel.heightProperty().bind(center.heightProperty());
         root.setLeft(this.shapeChooserPanel);
 
         Scene scene = new Scene(root);
