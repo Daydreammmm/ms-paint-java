@@ -151,4 +151,7 @@ public class View implements EventHandler<ActionEvent> {
                 }
         }
 
+    public PaintModel getModel() {
+        return this.paintModel;
+    }
 }

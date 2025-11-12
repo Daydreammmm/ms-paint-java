@@ -3,19 +3,22 @@ package ca.utoronto.utm.assignment2.paint;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.Tooltip;
 import javafx.scene.layout.GridPane;
 import javafx.scene.Node;
+import javafx.scene.paint.Color;
 
 public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEvent> {
 
     private View view;
+    private int paletteRow = 1;
     private Button selectedButton; // keep track of which button is selected
 
     public ShapeChooserPanel(View view) {
         this.view = view;
 
-        String[] buttonLabels = { "Circle", "Rectangle", "Square", "Squiggle", "Polyline", "Oval", "Triangle" };
+        String[] buttonLabels = {"Circle", "Rectangle", "Square", "Squiggle", "Polyline", "Oval", "Triangle"};
         Node[] icons = Icons.createIcons();
 
         int row = 0;
@@ -50,6 +53,41 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
         });
 
         this.add(fillToggle, 0, row);
+
+
+        Label accessible = new Label("Accessible Palette:");
+        this.add(accessible, 1, 0);
+
+        Color[] accessibleColors = {
+                Color.web("#000000"),
+                Color.web("#0072B2"),
+                Color.web("#E69F00"),
+                Color.web("#009E73"),
+                Color.web("#CC79A7")
+        };
+
+        Button colorBtn = null;
+        for (Color c : accessibleColors) {
+            colorBtn = new Button();
+            colorBtn.setMinSize(30, 30);
+            colorBtn.setStyle("-fx-background-color: " + toHex(c) + ";");
+
+            Tooltip tip = new Tooltip("CVD-safe color: " + toHex(c));
+            Tooltip.install(colorBtn, tip);
+
+            colorBtn.setOnAction(e -> {
+                view.getModel().setCurrentColor(c);
+            });
+            this.add(colorBtn, 1, paletteRow++);
+        }
+    }
+
+
+    private String toHex(Color c){
+                int r = (int)(c.getRed()*255);
+                int g = (int) (c.getGreen() * 255);
+                int b = (int)(c.getBlue()*255);
+               return String.format("#%02X%02X%02X", r, g, b);
     }
 
     @Override
