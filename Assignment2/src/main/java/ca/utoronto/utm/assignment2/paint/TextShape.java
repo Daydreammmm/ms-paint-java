@@ -27,4 +27,8 @@ public class TextShape implements Shape{
         g.fillText(text, position.x, position.y);
     }
 
+    public Color getColor(){
+        return this.color;
+    }
+
 }
