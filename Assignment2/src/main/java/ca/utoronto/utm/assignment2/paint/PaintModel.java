@@ -78,16 +78,13 @@ public class PaintModel extends Observable {
         Change c = undoStack.pop();
 
         if (c.type == Change.Type.ADD) {
-            // undo an add -> remove shape at stored index
             if (c.index >= 0 && c.index < shapes.size()) {
                 shapes.remove(c.index);
             } else if (!shapes.isEmpty()) {
-                // safety fallback if indices drift
                 shapes.remove(shapes.size() - 1);
             }
             redoStack.push(new Change(Change.Type.ADD, c.shape, c.index));
-        } else { // DELETE
-            // undo a delete -> insert back at same position
+        } else {
             int insertIdx = Math.min(Math.max(c.index, 0), shapes.size());
             shapes.add(insertIdx, c.shape);
             redoStack.push(new Change(Change.Type.DELETE, c.shape, c.index));
@@ -102,12 +99,10 @@ public class PaintModel extends Observable {
         Change c = redoStack.pop();
 
         if (c.type == Change.Type.ADD) {
-            // redo an add -> insert at stored position
             int insertIdx = Math.min(Math.max(c.index, 0), shapes.size());
             shapes.add(insertIdx, c.shape);
             undoStack.push(new Change(Change.Type.ADD, c.shape, c.index));
-        } else { // DELETE
-            // redo a delete -> remove at stored index
+        } else {
             if (c.index >= 0 && c.index < shapes.size()) {
                 shapes.remove(c.index);
             } else if (!shapes.isEmpty()) {
