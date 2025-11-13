@@ -47,7 +47,7 @@ public class Oval implements Shape {
         this.height = height;
     }
 
-    public Paint getColor() {
+    public Color getColor() {
         return color;
     }
 

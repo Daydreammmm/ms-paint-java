@@ -13,6 +13,8 @@ public class PaintModel extends Observable {
     private Color currentColor = Color.BLACK;
     private double currentStrokeWidth = 1.0;
 
+    private boolean darkMode = false;
+    private Color bgColor = Color.web("#F5F5F5");
     private boolean fillMode = false;
     public boolean isFillMode() {
         return fillMode;
@@ -27,6 +29,34 @@ public class PaintModel extends Observable {
         this.currentColor = color;
     }
 
+    public void setDarkMode() {
+
+        Color previousColor = this.bgColor;
+        darkMode = !darkMode;
+        if (!darkMode) {
+            this.bgColor = Color.web("#F5F5F5");
+        }
+        else {
+            this.bgColor = Color.web("#1E1E1E");
+        }
+
+        for(int i=0; i<shapes.size(); i++){
+            if(shapes.get(i) instanceof Squiggle shape){
+                if(shape.getColor().equals(previousColor)){
+                    shape.setColor(this.bgColor);
+                }
+            }
+        }
+        this.setChanged();
+        this.notifyObservers();
+    }
+
+    public boolean getDarkMode(){
+        return darkMode;
+    }
+    public Color getBgColor(){
+        return this.bgColor;
+    }
     public void addShape(Shape shape) {
         this.shapes.add(shape);
         undoStack.push(new Change(Change.Type.ADD, shape, shapes.size() - 1));

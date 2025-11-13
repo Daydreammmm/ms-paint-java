@@ -23,6 +23,13 @@ public class Squiggle implements Shape{
         return this.points;
     }
 
+    public Color getColor() {
+        return this.color;
+    }
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
     public void draw(GraphicsContext g2d) {
         g2d.setStroke(color);
         g2d.setLineWidth(strokeWidth);
