@@ -10,7 +10,13 @@ public class EraserStrat implements DrawingStrat {
 
     @Override
     public void mousePressed(MouseEvent e, PaintModel model) {
-        squiggle = new Squiggle(Color.web("#F5F5F5"), model.getCurrentStrokeWidth());
+        boolean dmode = model.getDarkMode();
+        if (dmode) {
+            squiggle = new Squiggle(Color.web("#1E1E1E"), model.getCurrentStrokeWidth());
+        }
+        else{
+            squiggle = new Squiggle(Color.web("#F5F5F5"), model.getCurrentStrokeWidth());
+        }
         drawing = true;
         System.out.println("Erasing");
     }
