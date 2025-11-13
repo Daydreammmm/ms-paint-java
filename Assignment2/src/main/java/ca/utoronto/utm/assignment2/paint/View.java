@@ -46,7 +46,9 @@ public class View implements EventHandler<ActionEvent> {
         redoButton.setOnAction(e -> paintModel.redo());
 
         Button eraserButton = new Button("Eraser");
-        eraserButton.setOnAction(e -> paintPanel.setMode("Eraser"));
+        eraserButton.setOnAction(e -> {paintPanel.setMode("Eraser");});
+        Button darkMode = new Button("Dark Mode");
+        darkMode.setOnAction(e -> {model.setDarkMode();});
 
 
         // --- Line thickness control (Spinner from 1..20, default 1)
@@ -61,7 +63,8 @@ public class View implements EventHandler<ActionEvent> {
         });
 
 
-        HBox styleBar = new HBox(10, colorPicker, lineLabel, thicknessSpinner, undoButton, redoButton, deleteButton, eraserButton);
+        HBox styleBar = new HBox(10, colorPicker, lineLabel, thicknessSpinner, undoButton, redoButton, deleteButton,
+                eraserButton, darkMode);
         styleBar.setPadding(new Insets(6));
 
         BorderPane root = new BorderPane();

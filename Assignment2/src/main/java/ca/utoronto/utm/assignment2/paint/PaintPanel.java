@@ -62,7 +62,8 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
     @Override
     public void update(Observable o, Object arg) {
         GraphicsContext g2d = this.getGraphicsContext2D();
-        g2d.clearRect(0, 0, this.getWidth(), this.getHeight());
+        g2d.setFill(model.getBgColor());
+        g2d.fillRect(0, 0, this.getWidth(), this.getHeight());
 
         for(int i=0; i<this.model.getShapes().size(); i++){
             Shape shape = this.model.getShapes().get(i);
