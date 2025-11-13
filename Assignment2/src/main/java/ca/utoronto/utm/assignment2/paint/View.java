@@ -40,6 +40,10 @@ public class View implements EventHandler<ActionEvent> {
         Button redoButton = new Button("Redo");
         redoButton.setOnAction(e -> paintModel.redo());
 
+        Button eraserButton = new Button("Eraser");
+        eraserButton.setOnAction(e -> paintPanel.setMode("Eraser"));
+
+
         // --- Line thickness control (Spinner from 1..20, default 1)
         Label lineLabel = new Label("Line:");
         Spinner<Integer> thicknessSpinner = new Spinner<>();
@@ -54,7 +58,7 @@ public class View implements EventHandler<ActionEvent> {
         // If you want the spinner to reflect model changes triggered elsewhere:
         // (Optional) observe model in your panel/observer to call thicknessSpinner.getValueFactory().setValue((int)model.getCurrentStrokeWidth());
 
-        HBox styleBar = new HBox(10, colorPicker, lineLabel, thicknessSpinner, undoButton, redoButton, deleteButton);
+        HBox styleBar = new HBox(10, colorPicker, lineLabel, thicknessSpinner, undoButton, redoButton, deleteButton, eraserButton);
         styleBar.setPadding(new Insets(6));
 
         BorderPane root = new BorderPane();

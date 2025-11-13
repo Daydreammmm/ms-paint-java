@@ -15,10 +15,6 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
     private DrawingStrat drawingStrat;
     private PaintModel model;
 
-//    public Circle circle; // This is VERY UGLY, should somehow fix this!!
-//    public Rectangle rectangle; // Temporary rectangle during creation
-//
-//    private Point startPoint;
 
     public PaintPanel(PaintModel model) {
         super(300, 300);
@@ -30,7 +26,6 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
         this.addEventHandler(MouseEvent.MOUSE_MOVED, this);
         this.addEventHandler(MouseEvent.MOUSE_CLICKED, this);
         this.addEventHandler(MouseEvent.MOUSE_DRAGGED, this);
-        this.setMode("Circle"); // initial tool
     }
 
     public void setMode(String mode){

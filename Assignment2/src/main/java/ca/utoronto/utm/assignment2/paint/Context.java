@@ -18,6 +18,8 @@ public final class Context {
                 return new OvalStrat();
             case "Polyline":
                 return new PolylineStrat();
+            case "Eraser":
+                return new EraserStrat();
             default:
                 return new CircleStrat();
         }
