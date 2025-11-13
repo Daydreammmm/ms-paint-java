@@ -50,7 +50,6 @@ public class OvalStrat implements DrawingStrat {
     public void drawMidConstruction(GraphicsContext g2d) {
         if (this.oval != null) {
             g2d.setStroke(oval.getColor());
-            // show outline while dragging
             g2d.strokeOval(
                     this.oval.getTopLeft().x,
                     this.oval.getTopLeft().y,

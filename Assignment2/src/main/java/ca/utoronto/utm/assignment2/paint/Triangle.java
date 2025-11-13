@@ -42,6 +42,7 @@ public class Triangle implements Shape {
     public Color getColor(){
         return color;
     }
+
     public boolean isFilled() {
         return filled;
     }

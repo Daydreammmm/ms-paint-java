@@ -20,17 +20,14 @@ public class SquareStrat implements DrawingStrat {
             double endX = e.getX();
             double endY = e.getY();
 
-            // figure out how far the mouse moved horizontally and vertically
             double dx = Math.abs(endX - startPoint.x);
             double dy = Math.abs(endY - startPoint.y);
 
-            // side length should always be the larger of dx, dy
             double side = Math.max(dx, dy);
 
             double x = startPoint.x;
             double y = startPoint.y;
 
-            // if we’re dragging left or up, shift the starting corner accordingly
             if (endX < startPoint.x) {
                 x = startPoint.x - side;
             }

@@ -11,6 +11,11 @@ import javafx.stage.Stage;
 import javafx.scene.layout.HBox;
 import javafx.geometry.Insets;
 import javafx.scene.paint.Color;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyCodeCombination;
+import javafx.scene.input.KeyCombination;
+import javafx.scene.input.KeyEvent;
+
 
 public class View implements EventHandler<ActionEvent> {
 
@@ -48,15 +53,13 @@ public class View implements EventHandler<ActionEvent> {
         Label lineLabel = new Label("Line:");
         Spinner<Integer> thicknessSpinner = new Spinner<>();
         thicknessSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 20, 1));
-        thicknessSpinner.setEditable(false); // keep it simple and safe
+        thicknessSpinner.setEditable(false);
         thicknessSpinner.valueProperty().addListener((obs, oldVal, newVal) -> {
             if (newVal != null) {
                 paintModel.setCurrentStrokeWidth(newVal.doubleValue());
             }
         });
 
-        // If you want the spinner to reflect model changes triggered elsewhere:
-        // (Optional) observe model in your panel/observer to call thicknessSpinner.getValueFactory().setValue((int)model.getCurrentStrokeWidth());
 
         HBox styleBar = new HBox(10, colorPicker, lineLabel, thicknessSpinner, undoButton, redoButton, deleteButton, eraserButton);
         styleBar.setPadding(new Insets(6));
@@ -73,6 +76,59 @@ public class View implements EventHandler<ActionEvent> {
         stage.setScene(scene);
         stage.setTitle("Paint");
         stage.show();
+        paintPanel.requestFocus();
+
+        scene.getAccelerators().put(
+                new KeyCodeCombination(KeyCode.Z, KeyCombination.CONTROL_DOWN),
+                () -> paintModel.undo()
+        );
+
+        scene.getAccelerators().put(
+                new KeyCodeCombination(KeyCode.Y, KeyCombination.CONTROL_DOWN),
+                () -> paintModel.redo()
+        );
+
+        scene.addEventFilter(KeyEvent.KEY_PRESSED, e -> {
+            KeyCode code = e.getCode();
+            System.out.println("DEBUG: Key pressed: " + code);
+
+            if (code == KeyCode.DELETE) {
+                paintModel.deleteLast();
+                e.consume();
+                return;
+            }
+
+            if (code == KeyCode.PLUS || code == KeyCode.ADD ||
+                    (code == KeyCode.EQUALS && e.isShiftDown()) || code == KeyCode.EQUALS) {
+                System.out.println("DEBUG: Plus key detected");
+                double currentWidth = paintModel.getCurrentStrokeWidth();
+                double newWidth = currentWidth + 1.0;
+
+                paintModel.setCurrentStrokeWidth(newWidth);
+                thicknessSpinner.getValueFactory().setValue((int) newWidth);
+                e.consume();
+                return;
+            }
+
+            if (code == KeyCode.MINUS || code == KeyCode.SUBTRACT) {
+                System.out.println("DEBUG: Minus key detected");
+                double currentWidth = paintModel.getCurrentStrokeWidth();
+                double newWidth = currentWidth - 1.0;
+
+                if (newWidth >= 1) {
+                    paintModel.setCurrentStrokeWidth(newWidth);
+                    thicknessSpinner.getValueFactory().setValue((int) newWidth);
+                }
+                e.consume();
+                return;
+            }
+
+            if (code == KeyCode.M) {
+                paintModel.toggleFillMode();
+                shapeChooserPanel.updateFillToggleText();
+                e.consume();
+            }
+        });
     }
 
 
@@ -89,8 +145,6 @@ public class View implements EventHandler<ActionEvent> {
         MenuBar menuBar = new MenuBar();
         Menu menu;
         MenuItem menuItem;
-
-        // A menu for File
 
         menu = new Menu("File");
 
@@ -113,8 +167,6 @@ public class View implements EventHandler<ActionEvent> {
         menu.getItems().add(menuItem);
 
         menuBar.getMenus().add(menu);
-
-        // Another menu for Edit
 
         menu = new Menu("Edit");
 
@@ -144,6 +196,10 @@ public class View implements EventHandler<ActionEvent> {
         return menuBar;
     }
 
+    public PaintModel getModel() {
+        return this.paintModel;
+    }
+
 
         @Override
         public void handle(ActionEvent event) {
@@ -155,7 +211,4 @@ public class View implements EventHandler<ActionEvent> {
                 }
         }
 
-    public PaintModel getModel() {
-        return this.paintModel;
-    }
 }

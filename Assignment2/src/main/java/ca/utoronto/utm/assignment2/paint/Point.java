@@ -4,7 +4,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
 public class Point {
-        double x, y;// Available to our package
+        double x, y;
         double thickness;
 
         public Point(double x, double y, double thickness) {

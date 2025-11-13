@@ -3,7 +3,7 @@ package ca.utoronto.utm.assignment2.paint;
 import java.util.ArrayList;
 import java.util.Observable;
 import javafx.scene.paint.Color;
-import java.util.Deque; // java interface for a queue used for undo
+import java.util.Deque;
 import java.util.ArrayDeque;
 
 
@@ -19,10 +19,14 @@ public class PaintModel extends Observable {
     }
     public void toggleFillMode() {
         fillMode = !fillMode;
+        this.setChanged();
+        this.notifyObservers();
+
     }
     public Color getCurrentColor() {
         return currentColor;
     }
+
     public void setCurrentColor(Color color) {
         this.currentColor = color;
     }

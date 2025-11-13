@@ -14,6 +14,7 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
     private View view;
     private int paletteRow = 1;
     private Button selectedButton; // keep track of which button is selected
+    private Button fillToggle;
 
     public ShapeChooserPanel(View view) {
         this.view = view;
@@ -37,8 +38,8 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
             this.add(button, 0, row);
             row++;
         }
-        // toggle between fill and outline
-        Button fillToggle = new Button("Outline Mode"); // default
+
+        fillToggle = new Button("Outline Mode");
         fillToggle.setMinWidth(100);
         fillToggle.setMinHeight(40);
 
@@ -51,6 +52,7 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
             }
             System.out.println("Fill mode: " + this.view.getPaintModel().isFillMode());
         });
+
 
         this.add(fillToggle, 0, row);
 
@@ -82,6 +84,13 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
         }
     }
 
+    public void updateFillToggleText() {
+        if (this.view.getPaintModel().isFillMode()) {
+            fillToggle.setText("Fill Mode");
+        } else {
+            fillToggle.setText("Outline Mode");
+        }
+    }
 
     private String toHex(Color c){
                 int r = (int)(c.getRed()*255);

@@ -51,13 +51,11 @@ Description:
 	The list of keyboard shortcuts is below:
 	Undo -> Ctrl+Z
 	Redo -> Ctrl+Y
-	Copy -> Ctrl+C
-	Paste -> Ctrl+V
 	Delete -> Delete
-	Move -> Arrow keys
 	Increasing/Decreasing stroke size: +\-
 	Change mode(Fill/Outline) -> M
 
+    Later on do Copy and paste, once implemented
 
 
 Reference:
