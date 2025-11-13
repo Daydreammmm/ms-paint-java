@@ -18,7 +18,7 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
     public ShapeChooserPanel(View view) {
         this.view = view;
 
-        String[] buttonLabels = {"Circle", "Rectangle", "Square", "Squiggle", "Polyline", "Oval", "Triangle"};
+        String[] buttonLabels = {"Circle", "Rectangle", "Square", "Squiggle", "Polyline", "Oval", "Triangle", "Text"};
         Node[] icons = Icons.createIcons();
 
         int row = 0;
@@ -26,7 +26,7 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
             Button button = new Button();
             button.setMinWidth(100);
             button.setMinHeight(40);
-            button.setGraphic(icons[i]);
+            button.setGraphic(i < icons.length ? icons[i] : null);
 
             Tooltip tooltip = new Tooltip(buttonLabels[i]);
             Tooltip.install(button, tooltip);
