@@ -12,7 +12,7 @@ public class EraserStrat implements DrawingStrat {
     public void mousePressed(MouseEvent e, PaintModel model) {
         squiggle = new Squiggle(Color.web("#F5F5F5"), model.getCurrentStrokeWidth());
         drawing = true;
-        System.out.println("Started Squiggle");
+        System.out.println("Erasing");
     }
 
     @Override
@@ -26,7 +26,6 @@ public class EraserStrat implements DrawingStrat {
     public void mouseReleased(MouseEvent e, PaintModel model) {
         model.addShape(squiggle);
         drawing = false;
-        System.out.println("Added Squiggle");
     }
 
     @Override
