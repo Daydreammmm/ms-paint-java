@@ -23,12 +23,17 @@ public class View implements EventHandler<ActionEvent> {
     private PaintPanel paintPanel;
     private ShapeChooserPanel shapeChooserPanel;
     private ColorPicker colorPicker;
+    private TextField opacityField;
 
     public View(PaintModel model, Stage stage) {
         this.paintModel = model;
         this.colorPicker = new ColorPicker(Color.BLACK);
         this.paintPanel = new PaintPanel(this.paintModel);
         this.shapeChooserPanel = new ShapeChooserPanel(this);
+        Label opacityLabel = new Label("Opacity:");
+
+        this.opacityField = new TextField("100");
+        opacityField.setPrefWidth(40);
 
         colorPicker.setOnAction(e -> paintModel.setCurrentColor(colorPicker.getValue()));
 
@@ -51,7 +56,6 @@ public class View implements EventHandler<ActionEvent> {
         darkMode.setOnAction(e -> {model.setDarkMode();});
 
 
-        // --- Line thickness control (Spinner from 1..20, default 1)
         Label lineLabel = new Label("Line:");
         Spinner<Integer> thicknessSpinner = new Spinner<>();
         thicknessSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 20, 1));
@@ -62,9 +66,49 @@ public class View implements EventHandler<ActionEvent> {
             }
         });
 
+        this.colorPicker.setOnAction(e -> {
+            Color selectedColor = colorPicker.getValue();
+            Color newColor = Color.color(
+                    selectedColor.getRed(),
+                    selectedColor.getGreen(),
+                    selectedColor.getBlue(),
+                    paintModel.getCurrentOpacity()
+            );
+            paintModel.setCurrentColor(newColor);
+            updateOpacityField();
+        });
 
-        HBox styleBar = new HBox(10, colorPicker, lineLabel, thicknessSpinner, undoButton, redoButton, deleteButton,
-                eraserButton, darkMode);
+        // Opacity text field handler
+        opacityField.setOnAction(e -> {
+            try {
+                int percentage = Integer.parseInt(opacityField.getText());
+                percentage = Math.max(0, Math.min(100, percentage));
+                double opacity = percentage / 100.0;
+
+                Color current = paintModel.getCurrentColor();
+                Color newColor = Color.color(
+                        current.getRed(),
+                        current.getGreen(),
+                        current.getBlue(),
+                        opacity
+                );
+                paintModel.setCurrentColor(newColor);
+
+                colorPicker.setValue(newColor);
+                opacityField.setText(String.valueOf(percentage));
+            } catch (NumberFormatException ex) {
+                updateOpacityField(); // revert on invalid input
+            }
+        });
+
+        this.colorPicker.valueProperty().addListener((obs, oldColor, newColor) -> {
+            updateOpacityField();
+        });
+
+
+        HBox styleBar = new HBox(10, colorPicker, opacityLabel, opacityField, lineLabel, thicknessSpinner,
+                undoButton, redoButton, deleteButton, eraserButton, darkMode);
+
         styleBar.setPadding(new Insets(6));
 
         BorderPane root = new BorderPane();
@@ -132,6 +176,11 @@ public class View implements EventHandler<ActionEvent> {
                 e.consume();
             }
         });
+    }
+
+    private void updateOpacityField() {
+        int opacityPercentage = (int)(paintModel.getCurrentOpacity() * 100);
+        opacityField.setText(String.valueOf(opacityPercentage));
     }
 
 
