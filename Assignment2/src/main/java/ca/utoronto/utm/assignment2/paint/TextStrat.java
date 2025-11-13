@@ -17,7 +17,7 @@ public class TextStrat implements DrawingStrat{
         if (result.isPresent() && !result.get().trim().isEmpty()) {
             String text = result.get();
             Point p = new Point(e.getX(), e.getY(), 1);
-            TextShape shape = new TextShape(p, text, model.getCurrentColor());
+            TextShape shape = new TextShape(p, text, model.getCurrentColor(), model.getCurrentStrokeWidth());
             model.addShape(shape);
         }
     };

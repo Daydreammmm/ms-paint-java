@@ -26,7 +26,7 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
             Button button = new Button();
             button.setMinWidth(100);
             button.setMinHeight(40);
-            button.setGraphic(icons[i]);
+            button.setGraphic(i < icons.length ? icons[i] : null);
 
             Tooltip tooltip = new Tooltip(buttonLabels[i]);
             Tooltip.install(button, tooltip);
