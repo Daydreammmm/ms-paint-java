@@ -25,6 +25,8 @@ public class View implements EventHandler<ActionEvent> {
     private ShapeChooserPanel shapeChooserPanel;
     private ColorPicker colorPicker;
     private TextField opacityField;
+    private TabPane tabPane;
+    private int canvasCount = 1;
 
     /**
      * Create a new View with a PaintModel and Stage, and set up all UI components.
@@ -37,10 +39,14 @@ public class View implements EventHandler<ActionEvent> {
         this.colorPicker = new ColorPicker(Color.BLACK);
         this.paintPanel = new PaintPanel(this.paintModel);
         this.shapeChooserPanel = new ShapeChooserPanel(this);
+        this.tabPane = new TabPane();
+
         Label opacityLabel = new Label("Opacity:");
 
         this.opacityField = new TextField("100");
         opacityField.setPrefWidth(40);
+
+
 
         colorPicker.setOnAction(e -> paintModel.setCurrentColor(colorPicker.getValue()));
 
@@ -61,6 +67,13 @@ public class View implements EventHandler<ActionEvent> {
         eraserButton.setOnAction(e -> {paintPanel.setMode("Eraser");});
         Button darkMode = new Button("Dark Mode");
         darkMode.setOnAction(e -> {model.setDarkMode();});
+
+        Button newCanvasButton = new Button("New Canvas");
+        newCanvasButton.setOnAction(e -> createAndSelectNewCanvasTab());
+
+        Button renameCanvasButton = new Button("Rename Canvas");
+        renameCanvasButton.setOnAction(e -> renameCurrentCanvas());
+
 
 
         Label lineLabel = new Label("Thickness:");
@@ -113,17 +126,27 @@ public class View implements EventHandler<ActionEvent> {
 
 
         HBox styleBar = new HBox(10, colorPicker, opacityLabel, opacityField, lineLabel, thicknessSpinner,
-                undoButton, redoButton, deleteButton, eraserButton, darkMode);
+                undoButton, redoButton, deleteButton, eraserButton, darkMode, newCanvasButton, renameCanvasButton);
 
         styleBar.setPadding(new Insets(6));
 
         BorderPane root = new BorderPane();
         root.setTop(styleBar);
-        StackPane center = new StackPane(this.paintPanel);
-        root.setCenter(center);
-        this.paintPanel.widthProperty().bind(center.widthProperty());
-        this.paintPanel.heightProperty().bind(center.heightProperty());
+
+        Tab firstTab = createCanvasTab("Canvas " + canvasCount, this.paintModel, this.paintPanel);
+        this.tabPane.getTabs().add(firstTab);
+        this.tabPane.getSelectionModel().select(firstTab);
+
+        root.setCenter(this.tabPane);
         root.setLeft(this.shapeChooserPanel);
+
+        this.tabPane.getSelectionModel().selectedItemProperty().addListener((obs, oldTab, newTab) -> {
+            if (newTab != null && newTab.getUserData() instanceof CanvasContext) {
+                CanvasContext ctx = (CanvasContext) newTab.getUserData();
+                switchToCanvas(ctx.model, ctx.panel);
+            }
+        });
+
 
         Scene scene = new Scene(root);
         stage.setScene(scene);
@@ -179,8 +202,89 @@ public class View implements EventHandler<ActionEvent> {
                 e.consume();
             }
         });
+        switchToCanvas(this.paintModel, this.paintPanel);
     }
 
+    /**
+     * Has the model and panel for a single canvas tab.
+     */
+    private static class CanvasContext {
+        final PaintModel model;
+        final PaintPanel panel;
+
+        CanvasContext(PaintModel model, PaintPanel panel) {
+            this.model = model;
+            this.panel = panel;
+        }
+    }
+
+    /**
+     * Create a new tab with a canvas using th model.
+     */
+    private Tab createCanvasTab(String title, PaintModel model, PaintPanel panel) {
+        StackPane center = new StackPane(panel);
+        panel.widthProperty().bind(center.widthProperty());
+        panel.heightProperty().bind(center.heightProperty());
+
+        Tab tab = new Tab(title, center);
+        tab.setClosable(true);
+
+        tab.setOnCloseRequest(event -> {
+            if (tabPane.getTabs().size() == 1) {
+                event.consume();
+                return;
+            }
+        });
+        tab.setUserData(new CanvasContext(model, panel));
+        return tab;
+    }
+
+    /**
+     * Create a brand new blank canvas in a new tab and switch to it.
+     */
+    private void createAndSelectNewCanvasTab() {
+        canvasCount++;
+        PaintModel newModel = new PaintModel();
+        PaintPanel newPanel = new PaintPanel(newModel);
+        Tab tab = createCanvasTab("Canvas " + canvasCount, newModel, newPanel);
+        tabPane.getTabs().add(tab);
+        tabPane.getSelectionModel().select(tab);
+    }
+
+    /**
+     * Switch the View's active model and panel to the given canvas.
+     */
+    private void switchToCanvas(PaintModel model, PaintPanel panel) {
+        this.paintModel = model;
+        this.paintPanel = panel;
+
+        colorPicker.setValue(paintModel.getCurrentColor());
+        updateOpacityField();
+
+        shapeChooserPanel.updateFillToggleText();
+
+        paintPanel.requestFocus();
+    }
+
+    /**
+     * Rename the currently selected canvas tab.
+     */
+    private void renameCurrentCanvas() {
+        Tab current = tabPane.getSelectionModel().getSelectedItem();
+        if (current == null) {
+            return;
+        }
+        TextInputDialog dialog = new TextInputDialog(current.getText());
+        dialog.setTitle("Rename Canvas");
+        dialog.setHeaderText(null);
+        dialog.setContentText("Canvas name:");
+        dialog.showAndWait().ifPresent(newName -> {
+            String trimmed = newName.trim();
+            if (!trimmed.isEmpty()) {
+                current.setText(trimmed);
+            }
+        });
+    }
     /**
      * Update the opacity text field based on the model's current opacity.
      */
