@@ -285,3 +285,85 @@ I WANT   : To have a extraFeature.txt file in scrum that lists all the extra fea
            relevant user stories/bugs required to implement the features.
 SO THAT  : The team can be aware of all the extra features implemented and the user stories/bugs required to add them.
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US3.017 : mallasus : Finished
+NAME     : Keyboard Shortcut Accessibility Controls
+PRIORITY : 3
+ESTIMATE : 1 days   ACTUAL : 1 days
+AS A     : user with limited motor control or someone who prefers faster interaction
+I WANT   : To control the paint application using keyboard shortcuts instead of mouse interaction.
+This feature should allow core painting functions to be performed efficiently through keys alone.
+Specifically:
+    Undo → Ctrl + Z
+    Redo → Ctrl + Y
+    Delete → Delete
+    Increase/Decrease Stroke Size → + / –
+    Change Mode (Fill/Outline) → M
+SO THAT  : users with motor impairments (e.g., ALS, hand tremors, limited hand movement) can still
+fully use the application, and other users who prefer keyboard-based interaction can work faster
+and more efficiently.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US3.018 : huanged6 : Finished
+NAME     : Color Friendly Palette
+PRIORITY : 3
+ESTIMATE : 1 days   ACTUAL : 1 day
+AS A     : user with vision impairments
+I WANT   : A color friendly palette for people with vision impairment problems(Deuteranopia, Protanopia and
+general low vision).
+SO THAT  : Users with vision impairment can distinguish between colors easily and create shapes.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US3.019 : sainij38 : Finished
+NAME     : Eraser
+PRIORITY : 3
+ESTIMATE : 1 days   ACTUAL : 1 day
+AS A     : user
+I WANT   : To be able to erase shapes I draw on the canvas using squiggles of the same background.
+SO THAT  : I can create more complex designs and remove shapes from my canvas(both light and dark mode) if I require.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US3.020 : sainij38 : Finished
+NAME     : Delete
+PRIORITY : 3
+ESTIMATE : 1 days   ACTUAL : 1 day
+AS A     : user
+I WANT   : To be able to delete shapes I draw on the canvas by using a button to delete the most recent shape.
+SO THAT  : I can delete shapes on the canvas.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US3.021 : harri874 : Finished
+NAME     : Undo
+PRIORITY : 3
+ESTIMATE : 1 days   ACTUAL : 1 day
+AS A     : user
+I WANT   : To be able to restore the canvas to a previous state using an undo button.
+SO THAT  : I can restore the canvas to a previous state.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US3.022 : harri874 : Finished
+NAME     : Redo
+PRIORITY : 3
+ESTIMATE : 1 days   ACTUAL : 1 day
+AS A     : user
+I WANT   : To restore the canvas to a state that was previously undone.
+SO THAT  : I can reverse an undo.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US3.023 : sainij38 : Finished
+NAME     : Dark Mode
+PRIORITY : 3
+ESTIMATE : 1 days   ACTUAL : 2 days
+AS A     : user
+I WANT   : To be able to change the canvas to dark mode(user preferences).
+SO THAT  : I can work in low-light conditions and reduce strain on eyes.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US3.024 : huanged6 : Finished
+NAME     : Text Mode
+PRIORITY : 3
+ESTIMATE : 1 days   ACTUAL : 2 days
+AS A     : user
+I WANT   : To be able to add and modify text to the canvas using user input and pre-existing features.
+SO THAT  : I can add textual elements to my canvas.
+--------------------------------------------------------------------------

@@ -1,45 +1,4 @@
 --------------------------------------------------------------------------------
-FeatureName: Move option
-
-Description:
-	Allows the user to select a shape and then move it using a mouse-drag to a desired location on the canvas.
-
-
-Reference:
-	(list of the BUG/US involved in creating this feature)
---------------------------------------------------------------------------------
-FeatureName: Rotate option
-
-Description:
-	Allows the user to select and rotate a shape 0 to 360 degrees on the canvas.
-
-
-Reference:
-	(list of the BUG/US involved in creating this feature)
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-FeatureName: Resize option
-
-Description:
-	Allows the user to select a shape on the canvas and drag the outline to resize it to a desired size.
-
-
-Reference:
-	(list of the BUG/US involved in creating this feature)
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-FeatureName: Cut-Copy-Paste option
-
-Description:
-	Allows the user to select the shape and then either cut/copy the shape and paste it at a desired location on the
-	canvas. Copying the shape means that the original shape stays on the canvas, whereas cutting the shape means that
-	the original shape is removed from the canvas.
-
-
-Reference:
-	(list of the BUG/US involved in creating this feature)
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
 FeatureName: Keyboard Shortcuts
 
 Description:
@@ -59,8 +18,7 @@ Description:
 
 
 Reference:
-	(list of the BUG/US involved in creating this feature)
---------------------------------------------------------------------------------
+	US3.017
 --------------------------------------------------------------------------------
 FeatureName: Color Friendly Palette
 
@@ -71,22 +29,56 @@ Description:
 	effectively.
 
 Reference:
-	(list of the BUG/US involved in creating this feature)
---------------------------------------------------------------------------------
+	US3.018
 --------------------------------------------------------------------------------
 FeatureName: Eraser
 
 Description:
 	Allows the user to select an eraser option and then delete shapes that the cursor overlaps during a mouse drag.
 Reference:
-	(list of the BUG/US involved in creating this feature)
+	US3.019
 --------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-FeatureName: Multiple Canvases
+FeatureName: Delete
 
 Description:
-	Allows the user to add another tab with another blank canvas to continue drawing there without impacting the
-	drawings on the first canvas.
+	Allows the user to delete the last drawn shape on the board. The user can delete shapes until the canvas reaches its
+	initial state(empty canvas).
 Reference:
-	(list of the BUG/US involved in creating this feature)
+	US3.020
 --------------------------------------------------------------------------------
+FeatureName: Undo
+
+Description:
+	Allows the user to restore the canvas to an immediately previous state. For example: if a shape was deleted the user
+	could use undo to restore the shape, or on the contrary if a shape was added the user could use undo to remove the
+	shape. The user can undo until the canvas reaches its initial state(empty canvas).
+Reference:
+	US3.021
+--------------------------------------------------------------------------------
+FeatureName: Redo
+
+Description:
+	Allows the user to restore the canvas to a state that was previously undone. The redo button reverses the action of
+	an undo. For example: if a user performed an undo operation to remove a shape, then a redo operation adds the shape
+	to the board. The user can redo until they reach the most recent state of the canvas(no undo operations performed).
+Reference:
+	US3.022
+--------------------------------------------------------------------------------
+FeatureName: Dark Mode
+
+Description:
+	Allows the user to change the canvas to dark mode if they wish to(UI preference). The dark mode changes the canvas
+	to a darker color and also updates the eraser to handle erasing on a dark canvas.
+Reference:
+	US3.023
+--------------------------------------------------------------------------------
+FeatureName: Text mode
+
+Description:
+	Allows the user to add custom text on the canvas using an input box. The text is added at the mousePressed position
+	and the user is able to control the size and color of the text using the thickness and color selector.
+Reference:
+	US3.024
+--------------------------------------------------------------------------------
+
+
