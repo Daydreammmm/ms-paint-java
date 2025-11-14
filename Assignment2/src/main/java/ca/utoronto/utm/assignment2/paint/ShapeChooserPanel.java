@@ -9,13 +9,21 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.Node;
 import javafx.scene.paint.Color;
 
+/**
+ * Panel that lets the user choose shapes and some preset colors.
+ */
 public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEvent> {
 
     private View view;
     private int paletteRow = 1;
-    private Button selectedButton; // keep track of which button is selected
+    private Button selectedButton;
     private Button fillToggle;
 
+    /**
+     * Create a shape chooser panel for a given View.
+     *
+     * @param view
+     */
     public ShapeChooserPanel(View view) {
         this.view = view;
 
@@ -84,6 +92,9 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
         }
     }
 
+    /**
+     * Update the fill toggle button text based on the model's fill mode.
+     */
     public void updateFillToggleText() {
         if (this.view.getPaintModel().isFillMode()) {
             fillToggle.setText("Fill Mode");
@@ -92,6 +103,12 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
         }
     }
 
+    /**
+     * Convert a Color to a hex string.
+     *
+     * @param c color
+     * @return hex string for the color
+     */
     private String toHex(Color c){
                 int r = (int)(c.getRed()*255);
                 int g = (int) (c.getGreen() * 255);
@@ -99,6 +116,11 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
                return String.format("#%02X%02X%02X", r, g, b);
     }
 
+    /**
+     * Handle clicks on shape buttons to change the current drawing mode.
+     *
+     * @param event
+     */
     @Override
     public void handle(ActionEvent event) {
         Button clickedButton = (Button) event.getSource();
@@ -110,6 +132,11 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
         highlightButton(clickedButton);
     }
 
+    /**
+     * Highlight the selected button and clear highlight from the previous one.
+     *
+     * @param button
+     */
     private void highlightButton(Button button) {
         if (selectedButton != null) {
             selectedButton.setStyle("");

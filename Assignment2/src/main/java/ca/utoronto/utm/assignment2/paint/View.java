@@ -16,15 +16,22 @@ import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.input.KeyEvent;
 
-
+/**
+ * View class that sets up the main paint window and handles UI events.
+ */
 public class View implements EventHandler<ActionEvent> {
-
     private PaintModel paintModel;
     private PaintPanel paintPanel;
     private ShapeChooserPanel shapeChooserPanel;
     private ColorPicker colorPicker;
     private TextField opacityField;
 
+    /**
+     * Create a new View with a PaintModel and Stage, and set up all UI components.
+     *
+     * @param model
+     * @param stage
+     */
     public View(PaintModel model, Stage stage) {
         this.paintModel = model;
         this.colorPicker = new ColorPicker(Color.BLACK);
@@ -177,20 +184,37 @@ public class View implements EventHandler<ActionEvent> {
         });
     }
 
+    /**
+     * Update the opacity text field based on the model's current opacity.
+     */
     private void updateOpacityField() {
         int opacityPercentage = (int)(paintModel.getCurrentOpacity() * 100);
         opacityField.setText(String.valueOf(opacityPercentage));
     }
 
-
+    /**
+     * Get the PaintModel used by this view.
+     *
+     * @return the PaintModel
+     */
     public PaintModel getPaintModel() {
         return this.paintModel;
     }
 
+    /**
+     * Set the current drawing mode on the PaintPanel.
+     *
+     * @param mode
+     */
     public void setMode(String mode){
         this.paintPanel.setMode(mode);
     }
 
+    /**
+     * Create and return a menu bar for this view.
+     *
+     * @return the MenuBar
+     */
     private MenuBar createMenuBar() {
 
         MenuBar menuBar = new MenuBar();
@@ -247,11 +271,20 @@ public class View implements EventHandler<ActionEvent> {
         return menuBar;
     }
 
+    /**
+     * Get the PaintModel used by this view.
+     *
+     * @return the PaintModel
+     */
     public PaintModel getModel() {
         return this.paintModel;
     }
 
-
+    /**
+     * Handle menu item actions such as Exit.
+     *
+     * @param event
+     */
     @Override
     public void handle(ActionEvent event) {
             System.out.println(((MenuItem) event.getSource()).getText());
