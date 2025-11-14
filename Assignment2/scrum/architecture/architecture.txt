@@ -64,7 +64,27 @@ DESIGN PATTERNS USED
 	4) UI/Logic separation: The drawing logic is separate from the UI which leads to less code clutter and faster
 	debugging. Furthermore, dependencies are reduced which is a good software development practice.
 	These are the main advantages of implementing the strategy desing pattern in our program.
-	Command: 
+
+    Command:
+    In our paint application, the undo/redo feature is essentially an implementation of the Command Pattern,
+    even though we did not formally create Command classes.
+    Whenever the user performs an action, such as adding a shape or deleting one, we create a small object that records
+    everything needed to reverse that action later. This includes what type of change happened, which shape was
+    involved, and where it was located in the list of shapes. This object acts like a “command.”
+    We keep these command objects in a deque.
+    When the user presses Undo, we look at the most recent command and perform the opposite operation.
+    For example:
+    If the action was “add shape,” undoing it means removing the shape.
+    If the action was “delete shape,” undoing it means re-inserting the shape.
+    After undoing, we move that command to the redo stack so it can be reapplied again if needed.
+    When the user presses Redo, we simply re-execute the original command from the redo stack and move it back to the
+    undo stack.
+    This design matches the Command Pattern because:
+    Each user action is stored as an object, separate from the model.
+    The model acts as the Receiver, which actually performs add/remove operations.
+    Undo and redo don’t need to know how shapes are stored or drawn—they only read the stored “command” information and
+    apply the opposite or same action.
+
 	Singleton:
 	Composite:
 	Factory: We used a factory pattern in the context class. The context class serves as the factory that returns the
