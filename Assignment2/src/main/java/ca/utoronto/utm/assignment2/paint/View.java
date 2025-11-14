@@ -63,7 +63,7 @@ public class View implements EventHandler<ActionEvent> {
         darkMode.setOnAction(e -> {model.setDarkMode();});
 
 
-        Label lineLabel = new Label("Line:");
+        Label lineLabel = new Label("Thickness:");
         Spinner<Integer> thicknessSpinner = new Spinner<>();
         thicknessSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 20, 1));
         thicknessSpinner.setEditable(false);
