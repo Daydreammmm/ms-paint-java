@@ -118,42 +118,42 @@ Nov 6,2025
 	Obstacles I face: Possible merge conflicts.
 
 Nov 7,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Implemented US3.012
+	What I will do today: Research on extra features that can be added to our application.
+	Obstacles I face: Distinguishing between difficulty level of the features.
 
 Nov 8,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Researched on extra features that can be added to our application.
+	What I will do today: Meet with the team to finalize all the extra features.
+	Obstacles I face: Agreeing on which features to implement
 
 Nov 9,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Finalized what features to implement.
+	What I will do today: Research on the features I have to implement.
+	Obstacles I face: Understanding how to modify the architecture to implement my extra features.
 
 Nov 10,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Understand how to modify the architecture.
+	What I will do today: Implement US3.019
+	Obstacles I face: Possible bugs while implementing US3.019.
 
 Nov 11,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Implement US3.019
+	What I will do today: Implement US3.020
+	Obstacles I face: Possible bugs while implementing US3.020.
 
 Nov 12,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Implement US3.020
+	What I will do today: Implement US3.023
+	Obstacles I face: Possible bugs while implementing US3.023.
 
 Nov 13,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Implement US3.023
+	What I will do today: Modify US3.019, finish all documentation and finalize application.
+	Obstacles I face: Possible bugs while implementing US3.019.
 
 Nov 14,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Modify US3.019, finish all documentation and finalize application.
+	What I will do today: Submit and CHILL
+	Obstacles I face: Nothing.
 
