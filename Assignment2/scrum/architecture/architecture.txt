@@ -30,6 +30,15 @@ TODO!!! Add in more architecture and discussion. For example,
 do you do something interesting to fix the association between the 
 ShapeChooser and the PaintPanel? How about the PaintModel, something
 is clearly wrong with it. Can you come up with a better architecture?
+
+We properly implemented the Observer pattern MVC to fix the association between the ShapeChooser and PaintPanel.
+The PaintPanel is now well-encapsulated and acts as an observer whereas the ShapeChooser panel is the view. Moreover,
+the use of strategy design pattern allows further encapsulation in the PaintPanel since the PaintPanel can implement
+different behaviors despite receiving the same mouse input by calling different strategies based on which mode the user
+is currently in. The current PaintModel integrates both the command design pattern and the observer/observable model in
+its implementation. The integration of the 2 design strategies allows us to add extended functionality within the
+PaintModel such as undo/redo(which uses a command pattern) and the observer/observable pattern allows the changes made
+by functionality such as redo to reflect seamlessly on the GUI whilst updating all the necessary components.
 ---------------------------------------------------------------------
 
 DESIGN PATTERNS USED
@@ -37,11 +46,32 @@ DESIGN PATTERNS USED
 	discuss it below. Only add design patterns if they simplify and improve
 	the code. I see at least two that would greatly improve code. 
 		
-	Strategy:
+	Strategy: We implemented the strategy design pattern to manage the behavior and implementation of all the shapes
+	that we can add to the canvas. We made a DrawingStrat interface that defines the methods that every each shape
+	implements(some shapes don't implement certain methods eg: oval does not implement mouseMoved). Then we made a
+	strategy class for each shape that implements the methods required to draw and preview the shape correctly. The
+	implementation of the strategy pattern greatly introduces the code by enabling 4 things:
+	1) Encapsulation: Each shape defines its own interaction and response to user input, and each shape is rendered
+	differently despite using the same user input. Eg: the same action mouseDragged has a different implementation for
+	the rectangle and oval strategies. Therefore, the PaintPanel can easily call the same event but display different
+	implementations. This allows the PaintPanel to easily change drawing modes by changing the current strategy.
+	2) Easy to understand code: The code is much easier for the team and other users to understand as there is clear
+	segmentation between the implementations of each shape. Furthermore, debugging gets much easier because the bug can
+	be isolated to a particular strategy. Lastly, the code in the PaintPanel reduces significantly, making the code
+	less cluttered and long.
+	3) Extensibility: New shapes can easily be added to the current application by adding a strategy for the shape,
+	therefore the program is easy to scale up and improve.
+	4) UI/Logic separation: The drawing logic is separate from the UI which leads to less code clutter and faster
+	debugging. Furthermore, dependencies are reduced which is a good software development practice.
+	These are the main advantages of implementing the strategy desing pattern in our program.
 	Command: 
 	Singleton:
 	Composite:
-	Factory:
+	Factory: We used a factory pattern in the context class. The context class serves as the factory that returns the
+	appropriate drawing strategy based on the input. The factory design pattern allowed us to centralize all the shape
+	creation logic in one class, thus making the code easy to extend as all we need to do is add a new case for each
+	new shape that is implemented. This makes the code easy to extend and provides huge scope for future updates/
+	development.
 	Builder:
 	Observer/Observable:
 	... (any others you find useful) ...
