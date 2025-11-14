@@ -6,10 +6,19 @@ import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
 
+/**
+ * A drawing strategy implementation for Circles. The class handles all the mouse events and preview for the user to
+ * create circles on the canvas.
+ */
 public class CircleStrat implements DrawingStrat{
 
     private Circle circle;
 
+    /**
+     * Creates a new circle with the centre as the mousePressed position.
+     * @param e
+     * @param model
+     */
     @Override
     public void mousePressed(MouseEvent e, PaintModel model) {
         System.out.println("Started Circle");
@@ -17,7 +26,11 @@ public class CircleStrat implements DrawingStrat{
         circle = new Circle(centre, 0, model.getCurrentColor(), model.isFillMode(), model.getCurrentStrokeWidth());
     }
 
-
+    /**
+     * Updates the radius of the circle based on the mouseDragged event.
+     * @param e
+     * @param model
+     */
     @Override
     public void mouseDragged(MouseEvent e, PaintModel model) {
         if(circle != null) {
@@ -27,6 +40,11 @@ public class CircleStrat implements DrawingStrat{
         }
     }
 
+    /**
+     * Adds the finalized circle to the canvas and resets the current circle reference to null.
+     * @param e
+     * @param model
+     */
     @Override
     public void mouseReleased(MouseEvent e, PaintModel model) {
         if(circle != null) {
@@ -42,6 +60,10 @@ public class CircleStrat implements DrawingStrat{
     @Override
     public void mouseClicked(MouseEvent e, PaintModel model) {}
 
+    /**
+     * Displays the circle mid-construction so the user can see the circle they will add to the canvas.
+     * @param g2d
+     */
     @Override
     public void drawMidConstruction(GraphicsContext g2d) {
         if (circle != null) {
