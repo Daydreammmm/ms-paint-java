@@ -89,75 +89,74 @@ Oct 30,2025
 Oct 31,2025
 	What I did yesterday: Nothing
 	What I will do today: Nothing
-	Obstacles I face:
+	Obstacles I face: Nothing
 
-Nov 1,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Nov 1, 2025
+    What I did yesterday: No commits from me yet in the log – project work for me hadn’t really started.
+    What I will do today: Get set up with the repo and start reading through the existing code so I’m ready to pick up UI features.
+    Obstacles I face: Just getting familiar with the codebase and everyone’s branches.
 
-Nov 2,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Nov 2, 2025
+    What I did yesterday: Continued getting used to the project structure and tools; no commits from me are recorded.
+    What I will do today: Plan which UI/user-story tasks (colour/thickness/UI tweaks) I can take on for this sprint.
+    Obstacles I face: Still in the early stages of understanding all the requirements and the existing features.
 
-Nov 3,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Nov 3, 2025
+    What I did yesterday: No code changes from me; mainly planning and coordination.
+    What I will do today: Start drafting or editing the scrum / planning notes so they’re ready for the next meetings.
+    Obstacles I face: Balancing this course work with other classes; still making sure I understand the team’s workflow.
 
-Nov 4,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Nov 4, 2025
+    What I did yesterday: No commits from me yesterday; preparation and reading.
+    What I will do today: I fixed up the daily scrum meeting and planning notes and “finished up little things here and there” in the repo (clean-ups and minor documentation tweaks).
+    Obstacles I face: Making sure all the notes correctly reflect what the team decided and that I don’t miss any small details.
 
-Nov 5,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Nov 5, 2025
+    What I did yesterday: Cleaned up daily scrum and planning notes, and tidied small details in the project.
+    What I will do today: Added a getter and setter for the current colour in the PaintModel so other tools (like the colour picker) can use it properly.
+    Obstacles I face: Making sure the new getters/setters don’t break any existing tools and keeping the model API consistent.
 
-Nov 6,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Nov 6, 2025
+    What I did yesterday: Implemented the current-colour getter/setter in PaintModel.
+    What I will do today: Finished the colour picker feature. Reverted an incorrect update to sprintbacklog3 and then fixed it (Revert "updated sprintbacklog3" and “should fix it now”). Merged the Update-US8.005 branch and later restored sprintbacklog3 after I accidentally deleted it.Finished the line-thickness user story (US3.007) and committed “Finished the thickness US3.007 – mallasus”.
+    Obstacles I face: Ran into Git problems (bad revert that removed the sprint backlog, then had to restore it) and had to be careful about merge conflicts while integrating Update-US8.005.
 
-Nov 7,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Nov 7, 2025
+    What I did yesterday: Implemented the colour picker, completed the thickness feature, and fixed/merged several backlog-related issues.
+    What I will do today: No new commits from me in the log; likely reviewing the UI changes and planning the next feature (polyline + bug fixes).
+    Obstacles I face: Making sure the new UI features work smoothly with others’ changes (undo/redo, eraser, etc.).
 
-Nov 8,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Nov 8, 2025
+    What I did yesterday: Mostly review / coordination work; no commits from me.
+    What I will do today: Fixed a bug with us3.017. Worked on the polyline strategy and got it “Almost fixed”. Fixed my own errors related to the polyline feature and its behaviour.
+    Obstacles I face: Getting the polyline tool to behave exactly like the expected design and cleaning up mistakes I made while implementing it.
 
-Nov 9,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Nov 9, 2025
+    What I did yesterday: Debugged and almost finished the polyline strategy, and fixed some of my earlier errors.
+    What I will do today:
+    Obstacles I face:
 
-Nov 10,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Nov 10, 2025
+    What I did yesterday: Finished most of the polyline logic and kept testing it with the colour picker and thickness settings. I also started adding keyboard shortcuts so it’s faster to switch tools.
+    What I will do today: Keep testing the shortcuts and make sure each key actually triggers the right button/action in the JavaFX UI.
+    Obstacles I face: It’s been tricky getting the shortcuts to work properly because of JavaFX focus issues (the key events don’t always fire if the right component doesn’t have focus), so the buttons didn’t always do what they were supposed to.
 
-Nov 11,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Nov 11, 2025
+    What I did yesterday: Continued working on keyboard shortcuts and tested them with different tools to make sure they respond correctly.
+    What I will do today: Focus on the opacity feature for shapes: hook it into the existing drawing code and UI so users can draw with transparency.
+    Obstacles I face: Getting opacity to work nicely with the rest of the rendering logic is tough—some shapes didn’t look right at first, and I had to keep tweaking how the opacity values were applied so everything looked consistent.
 
-Nov 12,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Nov 12, 2025
+  What I did yesterday:
+  What I will do today: Merged master into my work to stay up to date.
+  Obstacles I face: Handling merges cleanly and making sure opacity works consistently across all shapes and tools.
 
-Nov 13,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Nov 13, 2025
+    What I did yesterday: Set up my branch, merged from master, and added the opacity feature.
+    What I will do today: Removed some useless code and clean-ups. Fixed a bug with the ovals’ line thickness.
+    Obstacles I face: Oval bug, I could not figure out where the error was coming from.
 
-Nov 14,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
-
+Nov 14, 2025
+    What I did yesterday: Cleaned up useless code and fixed the ovals line-thickness bug.
+    What I will do today: Added more Javadoc. Removed leftover debug messages after testing.
+    Obstacles I face: Ensuring all Javadoc is accurate and double-checking that removing debug output doesn’t hide any remaining issues.
