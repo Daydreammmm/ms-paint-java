@@ -71,7 +71,6 @@ public class Rectangle implements Shape {
         double w = width;
         double h = height;
 
-        // handle negative dragging direction
         if (w < 0) {
             x += w;
             w = -w;

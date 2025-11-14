@@ -20,10 +20,19 @@ public class TextStrat implements DrawingStrat{
             TextShape shape = new TextShape(p, text, model.getCurrentColor(), model.getCurrentStrokeWidth());
             model.addShape(shape);
         }
-    };
-    public void mouseReleased(MouseEvent e, PaintModel model){};
-    public void mouseMoved(MouseEvent e, PaintModel model){};
-    public void mouseClicked(MouseEvent e, PaintModel model){};
-    public void mouseDragged(MouseEvent e, PaintModel model){};
-    public void drawMidConstruction(GraphicsContext g2d){};
+    }
+    @Override
+    public void mouseReleased(MouseEvent e, PaintModel model){}
+
+    @Override
+    public void mouseMoved(MouseEvent e, PaintModel model){}
+
+    @Override
+    public void mouseClicked(MouseEvent e, PaintModel model){}
+
+    @Override
+    public void mouseDragged(MouseEvent e, PaintModel model){}
+
+    @Override
+    public void drawMidConstruction(GraphicsContext g2d){}
 }

@@ -78,7 +78,6 @@ public class View implements EventHandler<ActionEvent> {
             updateOpacityField();
         });
 
-        // Opacity text field handler
         opacityField.setOnAction(e -> {
             try {
                 int percentage = Integer.parseInt(opacityField.getText());
@@ -97,7 +96,7 @@ public class View implements EventHandler<ActionEvent> {
                 colorPicker.setValue(newColor);
                 opacityField.setText(String.valueOf(percentage));
             } catch (NumberFormatException ex) {
-                updateOpacityField(); // revert on invalid input
+                updateOpacityField();
             }
         });
 
@@ -188,11 +187,11 @@ public class View implements EventHandler<ActionEvent> {
         return this.paintModel;
     }
 
-    // ugly way to do this?
-        public void setMode(String mode){
-            this.paintPanel.setMode(mode);
-        }
-        private MenuBar createMenuBar() {
+    public void setMode(String mode){
+        this.paintPanel.setMode(mode);
+    }
+
+    private MenuBar createMenuBar() {
 
         MenuBar menuBar = new MenuBar();
         Menu menu;
@@ -253,14 +252,14 @@ public class View implements EventHandler<ActionEvent> {
     }
 
 
-        @Override
-        public void handle(ActionEvent event) {
-                System.out.println(((MenuItem) event.getSource()).getText());
-                String command = ((MenuItem) event.getSource()).getText();
-                System.out.println(command);
-                if (command.equals("Exit")) {
-                        Platform.exit();
-                }
-        }
+    @Override
+    public void handle(ActionEvent event) {
+            System.out.println(((MenuItem) event.getSource()).getText());
+            String command = ((MenuItem) event.getSource()).getText();
+            System.out.println(command);
+            if (command.equals("Exit")) {
+                    Platform.exit();
+            }
+    }
 
 }

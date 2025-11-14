@@ -33,16 +33,6 @@ public class PaintModel extends Observable {
         this.currentColor = color;
     }
 
-    public void setCurrentColorWithOpacity(double opacity) {
-        Color current = getCurrentColor();
-        this.currentColor = Color.color(
-                current.getRed(),
-                current.getGreen(),
-                current.getBlue(),
-                Math.max(0.0, Math.min(1.0, opacity)) // Clamp opacity
-        );
-    }
-
     public double getCurrentOpacity() {
         return currentColor.getOpacity();
     }

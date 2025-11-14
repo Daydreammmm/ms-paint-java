@@ -34,14 +34,6 @@ public class Circle implements Shape {
                 }
         }
 
-        public boolean isFilled() {
-            return filled;
-        }
-
-        public void setFilled(boolean filled) {
-            this.filled = filled;
-        }
-
         public void setRadius(double radius) {
             this.radius = radius;
         }

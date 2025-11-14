@@ -3,10 +3,6 @@ package ca.utoronto.utm.assignment2.paint;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
 
-/**
- * click first, drag+release to second (shows a line),
- * then drag+release to third (shows live triangle), done.
- */
 public class TriangleStrat implements DrawingStrat {
     private final PaintModel model;
     private int stage = 0;

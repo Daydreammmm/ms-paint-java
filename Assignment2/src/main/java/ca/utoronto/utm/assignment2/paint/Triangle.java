@@ -3,10 +3,6 @@ package ca.utoronto.utm.assignment2.paint;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
-/**
- * super simple triangle with 3 vertices and a draw() helper.
- * feel free to extend later with stroke width, fill toggle, etc.
- */
 public class Triangle implements Shape {
     private final double x1, y1;
     private final double x2, y2;
