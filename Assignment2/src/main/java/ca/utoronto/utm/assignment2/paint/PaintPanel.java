@@ -32,7 +32,6 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
         this.addEventHandler(MouseEvent.MOUSE_MOVED, this);
         this.addEventHandler(MouseEvent.MOUSE_CLICKED, this);
         this.addEventHandler(MouseEvent.MOUSE_DRAGGED, this);
-        this.setMode("Circle");
 
         this.setFocusTraversable(true);
         this.setOnMouseClicked(e -> this.requestFocus());
