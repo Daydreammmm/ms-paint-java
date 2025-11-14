@@ -4,16 +4,30 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
+/**
+ * A drawing strategy implementation for Ovals. The class handles all the mouse events and preview for the user to
+ * create ovals on the canvas.
+ */
 public class OvalStrat implements DrawingStrat {
     private Oval oval;
     private Point startPoint;
 
+    /**
+     * Creates a new oval at the mousePressed position.
+     * @param e
+     * @param model
+     */
     @Override
     public void mousePressed(MouseEvent e, PaintModel model) {
         startPoint = new Point(e.getX(), e.getY(), model.getCurrentStrokeWidth());
         oval = new Oval(startPoint, 0, 0, model.getCurrentColor(), model.isFillMode(), model.getCurrentStrokeWidth());
     }
 
+    /**
+     * Updates the oval based on the mouseDragged event.
+     * @param e
+     * @param model
+     */
     @Override
     public void mouseDragged(MouseEvent e, PaintModel model) {
         if (oval != null && startPoint != null) {
@@ -31,6 +45,11 @@ public class OvalStrat implements DrawingStrat {
         }
     }
 
+    /**
+     * Adds the finalized ovals to the canvas and resets the current circle reference to null.
+     * @param e
+     * @param model
+     */
     @Override
     public void mouseReleased(MouseEvent e, PaintModel model) {
         if (oval != null) {
@@ -46,6 +65,10 @@ public class OvalStrat implements DrawingStrat {
     @Override
     public void mouseClicked(MouseEvent e, PaintModel model) {}
 
+    /**
+     * Displays the ovals mid-construction so the user can see the ovals they will add to the canvas.
+     * @param g2d
+     */
     @Override
     public void drawMidConstruction(GraphicsContext g2d) {
         if (this.oval != null) {

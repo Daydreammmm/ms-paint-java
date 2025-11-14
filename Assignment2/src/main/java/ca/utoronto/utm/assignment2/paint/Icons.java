@@ -15,7 +15,15 @@ import javafx.scene.paint.Color;
 import javafx.scene.Node;
 import javafx.scene.shape.Ellipse;
 
+/**
+ * Class to create icons for all the drawing styles.
+ */
 public class Icons {
+
+    /**
+     * Creates an array of shape icons for all the drawing modes.
+     * @return array of shape icons
+     */
     public static Node[] createIcons(){
 
         Node[] icons = new Node[7];

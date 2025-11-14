@@ -3,6 +3,10 @@ package ca.utoronto.utm.assignment2.paint;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
 
+/**
+ * A drawing strategy implementation for Triangles. The class handles all the mouse events and preview for the user to
+ * create triangles on the canvas.
+ */
 public class TriangleStrat implements DrawingStrat {
     private final PaintModel model;
     private int stage = 0;
@@ -11,10 +15,19 @@ public class TriangleStrat implements DrawingStrat {
     private double x2, y2;
     private double mx, my;
 
+    /**
+     * Creates a new triangle strategy.
+     * @param model
+     */
     public TriangleStrat(PaintModel model) {
         this.model = model;
     }
 
+    /**
+     * Sets the first triangle coordinate at mousePressed
+     * @param e
+     * @param model
+     */
     @Override
     public void mousePressed(MouseEvent e, PaintModel model) {
         if (stage == 0) {
@@ -24,6 +37,11 @@ public class TriangleStrat implements DrawingStrat {
         }
     }
 
+    /**
+     * Sets the second point on the first release, and then adds the triangle to the canvas on the second release.
+     * @param e
+     * @param model
+     */
     @Override
     public void mouseReleased(MouseEvent e, PaintModel model) {
         if (stage == 1) {
@@ -38,12 +56,22 @@ public class TriangleStrat implements DrawingStrat {
         }
     }
 
+    /**
+     * Updates the mouse position during a mouseDragged event.
+     * @param e
+     * @param model
+     */
     @Override
     public void mouseDragged(MouseEvent e, PaintModel model) {
         mx = e.getX();
         my = e.getY();
     }
 
+    /**
+     * Updates the mouse position during a mouseMoved event.
+     * @param e
+     * @param model
+     */
     @Override
     public void mouseMoved(MouseEvent e, PaintModel model) {
         mx = e.getX();
@@ -54,6 +82,10 @@ public class TriangleStrat implements DrawingStrat {
     public void mouseClicked(MouseEvent e, PaintModel model) {
     }
 
+    /**
+     * Displays the rectangle mid-construction so the user can see the rectangle they will add to the canvas.
+     * @param g
+     */
     @Override
     public void drawMidConstruction(GraphicsContext g) {
         if (stage == 1) {

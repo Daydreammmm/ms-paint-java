@@ -1,7 +1,16 @@
 package ca.utoronto.utm.assignment2.paint;
 
+/**
+ * Context class to return the correct drawing strategy based on what the user selects.
+ */
 public final class Context {
 
+    /**
+     * Returns the right strategy for the current drawing mode.
+     * @param mode
+     * @param model
+     * @return a valid drawing strategy
+     */
     public static DrawingStrat getDrawingStrat(String mode, PaintModel model) {
         switch (mode) {
             case "Circle":

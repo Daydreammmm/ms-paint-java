@@ -11,10 +11,17 @@ import java.util.Observable;
 import java.util.Observer;
 
 
+/**
+ * The canvas for drawing the shapes that handles mouse events and updates the display.
+ */
 public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Observer {
     private DrawingStrat drawingStrat;
     private PaintModel model;
 
+    /**
+     * Creates a new paint panel that observes the current model.
+     * @param model
+     */
     public PaintPanel(PaintModel model) {
         super(300, 300);
         this.model=model;
@@ -31,11 +38,19 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
         this.setOnMouseClicked(e -> this.requestFocus());
     }
 
+    /**
+     * Sets the drawing mode to the current drawing strategy.
+     * @param mode
+     */
     public void setMode(String mode){
         this.drawingStrat = Context.getDrawingStrat(mode, this.model);
         System.out.println(mode);
     }
 
+    /**
+     * Handles mouse events by assigning them to a particular strategy.
+     * @param mouseEvent
+     */
     @Override
     public void handle(MouseEvent mouseEvent) {
         EventType<MouseEvent> mouseEventType = (EventType<MouseEvent>) mouseEvent.getEventType();
@@ -59,6 +74,12 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
         this.update(null, null);
     }
 
+    /**
+     * Updates the canvas when the model changes.
+     * @param o     the observable object.
+     * @param arg   an argument passed to the {@code notifyObservers}
+     *                 method.
+     */
     @Override
     public void update(Observable o, Object arg) {
         GraphicsContext g2d = this.getGraphicsContext2D();
