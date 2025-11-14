@@ -7,21 +7,38 @@
 
 # Sprint 4 Nov 7-Nov 13, 2025
 # Sprint 4 Backlog UserStories go below
-
-TYPE     : USER STORY US3.017 : mallasus : NotFinished
-NAME     : Keyboard Shortcut Accessibility Controls
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE : USER STORY US3.017 : mallasus : NotFinished
+NAME : Keyboard Shortcut Accessibility Controls
 PRIORITY : 3
-ESTIMATE : 1 days   ACTUAL : —
-AS A     : user with limited motor control or someone who prefers faster interaction
-I WANT   : To control the paint application using keyboard shortcuts instead of mouse interaction.
-This feature should allow core painting functions to be performed efficiently through keys alone.
-Specifically:
-    Undo → Ctrl + Z
-    Redo → Ctrl + Y
-    Delete → Delete
-    Increase/Decrease Stroke Size → + / –
-    Change Mode (Fill/Outline) → M
-SO THAT  : users with motor impairments (e.g., ALS, hand tremors, limited hand movement) can still
-fully use the application, and other users who prefer keyboard-based interaction can work faster
-and more efficiently.
-
+ESTIMATE : 1 days ACTUAL : 2
+AS A : user with limited motor control or someone who prefers faster
+interaction
+I WANT : to control the paint application using keyboard shortcuts instead
+        of mouse interaction, so core painting functions can be performed
+        efficiently through keys alone. Specifically:
+            Undo → Ctrl + Z
+            Redo → Ctrl + Y
+            Delete → Delete
+            Increase/Decrease Stroke → + / –
+            Change Mode (Fill/Outline) → M
+SO THAT : users with motor impairments (e.g., ALS, hand tremors, limited
+        hand movement) can still fully use the application, and users who
+        prefer keyboard-based interaction can work faster and more
+        efficiently.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE : USER STORY US3.018 : mallasus : Finished
+NAME : Shape Opacity Control
+PRIORITY : 3
+ESTIMATE : 1 days ACTUAL : 1 days
+AS A : user who wants more control over how shapes look in the drawing
+I WANT : to adjust the opacity of shapes (both fill and outline) using a
+        simple UI control such as a slider, for both new shapes and
+        selected shapes.
+SO THAT : I can layer shapes without fully hiding what is behind them,
+            create transparent highlights, and better emphasize or de-emphasize
+            parts of my drawing.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
