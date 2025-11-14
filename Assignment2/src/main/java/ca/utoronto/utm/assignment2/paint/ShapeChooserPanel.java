@@ -35,8 +35,12 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
             Button button = new Button();
             button.setMinWidth(100);
             button.setMinHeight(40);
-            button.setGraphic(i < icons.length ? icons[i] : null);
 
+            Node textIcon = new javafx.scene.control.Label("Text");
+            ((javafx.scene.control.Label) textIcon).setStyle(
+                    "-fx-font-size: 16; -fx-font-weight: bold;"
+            );
+            button.setGraphic(i < icons.length ? icons[i] : textIcon);
             Tooltip tooltip = new Tooltip(buttonLabels[i]);
             Tooltip.install(button, tooltip);
 
