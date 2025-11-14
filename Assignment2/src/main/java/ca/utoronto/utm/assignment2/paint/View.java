@@ -143,7 +143,6 @@ public class View implements EventHandler<ActionEvent> {
 
         scene.addEventFilter(KeyEvent.KEY_PRESSED, e -> {
             KeyCode code = e.getCode();
-            System.out.println("DEBUG: Key pressed: " + code);
 
             if (code == KeyCode.DELETE) {
                 paintModel.deleteLast();
@@ -153,7 +152,6 @@ public class View implements EventHandler<ActionEvent> {
 
             if (code == KeyCode.PLUS || code == KeyCode.ADD ||
                     (code == KeyCode.EQUALS && e.isShiftDown()) || code == KeyCode.EQUALS) {
-                System.out.println("DEBUG: Plus key detected");
                 double currentWidth = paintModel.getCurrentStrokeWidth();
                 double newWidth = currentWidth + 1.0;
 
@@ -164,7 +162,6 @@ public class View implements EventHandler<ActionEvent> {
             }
 
             if (code == KeyCode.MINUS || code == KeyCode.SUBTRACT) {
-                System.out.println("DEBUG: Minus key detected");
                 double currentWidth = paintModel.getCurrentStrokeWidth();
                 double newWidth = currentWidth - 1.0;
 
