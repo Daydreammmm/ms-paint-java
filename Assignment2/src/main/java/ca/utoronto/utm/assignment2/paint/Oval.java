@@ -24,6 +24,7 @@ public class Oval implements Shape {
     public void draw(GraphicsContext g) {
         g.setStroke(color);
         g.setFill(color);
+        g.setLineWidth(strokeWidth);
 
         double x = topLeft.x;
         double y = topLeft.y;

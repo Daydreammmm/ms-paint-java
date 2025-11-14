@@ -56,6 +56,7 @@ public class OvalStrat implements DrawingStrat {
                     this.oval.getWidth(),
                     this.oval.getHeight()
             );
+            g2d.setLineWidth(oval.getStrokeWidth());
         }
     }
 }
