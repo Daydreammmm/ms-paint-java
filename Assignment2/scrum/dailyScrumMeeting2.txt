@@ -142,17 +142,17 @@ Nov 11,2025
 	Obstacles I face: memorizing the symbols
 
 Nov 12,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: learn the new content of regex and file IO
+	What I will do today: implement my features: accessibility colors and a text mode
+	Obstacles I face: formating layout
 
 Nov 13,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: implement accessibility colors and a text mode
+	What I will do today: go over everything and javadoc/fix bugs
+	Obstacles I face: a lot of files to look at
 
 Nov 14,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: go over everything and javadoc/fix bugs
+	What I will do today: brush up everything and prepare for submission
+	Obstacles I face: None
 
