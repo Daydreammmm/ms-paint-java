@@ -17,7 +17,6 @@ import java.util.Observer;
 public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Observer {
     private DrawingStrat drawingStrat;
     private PaintModel model;
-    private boolean duplicatePending = false;
 
 
     /**
@@ -97,10 +96,4 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
             drawingStrat.drawMidConstruction(g2d);
         }
     }
-    public void startDuplicateAtClick() {
-        if (model.hasShapes()) {
-            duplicatePending = true;
-        }
-    }
-
 }
