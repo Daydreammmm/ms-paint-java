@@ -141,42 +141,42 @@ Nov 6,2025
     Obstacles I face: Possible merge conflicts.
 
 Nov 7,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+    What I did yesterday: Reviewed the paint project and got familiar with the code.
+    What I will do today: Plan how to add support for multiple canvases.
+    Obstacles I face: Understanding where to plug in new features.
 
 Nov 8,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+    What I did yesterday: Planned the tab system for multiple canvases.
+    What I will do today: Start adding a TabPane and a second canvas.
+    Obstacles I face: Keeping each canvas separate.
 
 Nov 9,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+    What I did yesterday: Added basic multiple canvases using tabs.
+    What I will do today: Make the toolbar work with whichever tab is active.
+    Obstacles I face: Updating the active model/panel correctly on tab change.
 
 Nov 10,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+    What I did yesterday: Connected the toolbar to the active canvas.
+    What I will do today: Clean up and reorganize the toolbar layout.
+    Obstacles I face: Avoiding a cluttered toolbar.
 
 Nov 11,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Fixed up the toolbar groups and tested drawing on multiple canvases.
+    What I will do today: Fix undo/redo so it behaves better.
+    Obstacles I face: Making sure undo/redo works properly after changes.
 
 Nov 12,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Improved undo/redo logic and tested it.
+    What I will do today: Work on making the canvas area fullscreenable.
+    Obstacles I face: Handling resizing without breaking the layout.
 
 Nov 13,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Made the canvas fullscreenable and verified resizing.
+    What I will do today: Do final testing of multiple canvases and toolbar fixes.
+    Obstacles I face: Finding any small bugs before finishing.
 
 Nov 14,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Tested multiple canvases, toolbar, undo/redo, and fullscreen.
+    What I will do today: Clean up code and finalize the project and submit.
+    Obstacles I face: Time management 😭
 

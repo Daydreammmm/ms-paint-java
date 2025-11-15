@@ -147,6 +147,58 @@ public class PaintModel extends Observable {
         this.setChanged();
         this.notifyObservers();
     }
+    /**
+     * @return true if there is at least one shape on this canvas.
+     */
+    public boolean hasShapes() {
+        return !shapes.isEmpty();
+    }
+
+    /**
+     * @return the last shape in the list, or null if there are none.
+     */
+    public Shape getLastShape() {
+        if (shapes.isEmpty()) return null;
+        return shapes.get(shapes.size() - 1);
+    }
+
+    /**
+     * Duplicate the last shape and place the copy so that its "anchor"
+     * is at (x, y). For a circle, the anchor is its centre.
+     */
+    public void duplicateLastShapeAt(double x, double y) {
+        Shape last = getLastShape();
+        if (last == null) return;
+
+        Shape copy = duplicateShapeAt(last, x, y);
+        if (copy == null) return;
+        addShape(copy);
+    }
+    /**
+     * Create a duplicate of the given shape, positioned so its anchor is at (x, y).
+     * For Circle, the anchor is its centre.
+     */
+    private Shape duplicateShapeAt(Shape original, double x, double y) {
+        if (original == null) return null;
+
+        if (original instanceof Circle) {
+            Circle c = (Circle) original;
+
+            Point newCenter = new Point(x, y);
+
+            return new Circle(
+                    newCenter,
+                    c.getRadius(),
+                    c.getColor(),
+                    c.isFilled(),
+                    c.getStrokeWidth()
+            );
+        }
+
+        // TODO: add similar blocks for other shapes (Rectangle, Polyline, etc.) if you want
+        return null;
+    }
+
 
     /**
      * Delete the last shape in the list, if any, and record the change
