@@ -96,3 +96,10 @@ Description:
 Reference:
 	US3.026
 --------------------------------------------------------------------------------
+FeatureName: Clear Canvas
+
+Description:
+	Allows the user to remove all shapes from the canvas to reset
+Reference:
+	US3.027
+--------------------------------------------------------------------------------
