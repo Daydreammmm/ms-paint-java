@@ -391,3 +391,12 @@ AS A     : user
 I WANT   : To create multiple canvases.
 SO THAT  : The user has multiple canvases to draw on.
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US3.027 : harri874 : Finished
+NAME     : Clear canvases
+PRIORITY : 3
+ESTIMATE : 1 days   ACTUAL : 1 day
+AS A     : user
+I WANT   : I want to clear a canvas.
+SO THAT  : the canvas is blank and i can restart.
+--------------------------------------------------------------------------
