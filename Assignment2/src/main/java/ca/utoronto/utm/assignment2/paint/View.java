@@ -124,9 +124,16 @@ public class View implements EventHandler<ActionEvent> {
             updateOpacityField();
         });
 
+        // colour and stroke controls
+        HBox leftGroup = new HBox(5, colorPicker, opacityLabel, opacityField, lineLabel, thicknessSpinner);
 
-        HBox styleBar = new HBox(10, colorPicker, opacityLabel, opacityField, lineLabel, thicknessSpinner,
-                undoButton, redoButton, deleteButton, eraserButton, darkMode, newCanvasButton, renameCanvasButton);
+        // editing commands
+        HBox middleGroup = new HBox(5, undoButton, redoButton, deleteButton);
+
+        // canvas controls
+        HBox rightGroup = new HBox(5, eraserButton, darkMode, newCanvasButton, renameCanvasButton);
+
+        HBox styleBar = new HBox(20, leftGroup, middleGroup, rightGroup);
 
         styleBar.setPadding(new Insets(6));
 
