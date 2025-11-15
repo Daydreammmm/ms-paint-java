@@ -246,6 +246,17 @@ public class PaintModel extends Observable {
         this.setChanged();
         this.notifyObservers();
     }
+    /**
+     * Remove all shapes from the current canvas and reset undo/redo history.
+     */
+    public void clearCanvas() {
+        shapes.clear();
+        undoStack.clear();
+        redoStack.clear();
+
+        setChanged();
+        notifyObservers();
+    }
 
 }
 

@@ -74,6 +74,9 @@ public class View implements EventHandler<ActionEvent> {
         Button renameCanvasButton = new Button("Rename Canvas");
         renameCanvasButton.setOnAction(e -> renameCurrentCanvas());
 
+        Button clearButton = new Button("Clear");
+        clearButton.setOnAction(e -> paintModel.clearCanvas());
+
 
 
         Label lineLabel = new Label("Thickness:");
@@ -128,7 +131,7 @@ public class View implements EventHandler<ActionEvent> {
         HBox leftGroup = new HBox(5, colorPicker, opacityLabel, opacityField, lineLabel, thicknessSpinner);
 
         // editing commands
-        HBox middleGroup = new HBox(5, undoButton, redoButton, deleteButton);
+        HBox middleGroup = new HBox(5, undoButton, redoButton, deleteButton,clearButton);
 
         // canvas controls
         HBox rightGroup = new HBox(5, eraserButton, darkMode, newCanvasButton, renameCanvasButton);
