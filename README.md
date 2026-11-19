@@ -1,24 +1,20 @@
-# MS Paint Clone
+# ms-paint-java
 
-A drawing application in JavaFX, originally built for a CSC207 project at the University of Toronto Mississauga.
-Started as a group project, and later refined independently to add in more custom features.
+A paint app in JavaFX. I made it for CSC207 at UTM, with a group at first, then kept working on it after.
 
-## Features
-- Drawing tools: Circle, Rectangle, Square, Oval, Triangle, Polyline, Squiggle, Text, Eraser
-- Colour picker, opacity control (0–100%), stroke width, fill / outline mode (M)
-- Undo (Ctrl+Z) and Redo (Ctrl+Y), Delete, Clear Canvas
-- Dark Mode, colour-vision-deficiency-safe palette
-- Multiple canvases as tabs, with rename
-- Keyboard shortcuts: Ctrl+Z undo, Ctrl+Y redo, Delete, +/- stroke width, M fill/outline
+You can draw circles, rectangles, squares, ovals, triangles, polylines, squiggles, and text, plus an eraser. There's a colour picker, opacity, stroke width, fill/outline (M), undo (Ctrl+Z), redo (Ctrl+Y), delete, clear canvas, dark mode, and you can open multiple canvases as tabs and rename them.
 
-## Architecture
-- MVC + Observer: `PaintModel extends Observable`, `PaintPanel` observes the model and redraws on change
-- Strategy: `DrawingStrat` interface with a strategy per shape (`CircleStrat`, `RectangleStrat`, etc.). `Context.getDrawingStrat()` acts as a factory, returning the strategy for the current mode
-- Command: undo/redo stores each add/delete as a `Change` object (type, shape, index) on undo/redo deques in `PaintModel`
+I also added a colourblind-safe palette, since the default colours weren't great for that.
 
-## How to run
-Requires Java 22 and Maven.
+How it's put together:
+- PaintModel holds all the shapes and notifies the panel when something changes
+- Each shape has its own strategy class (CircleStrat, RectangleStrat, etc.) — PaintPanel just calls the same mouse events and the strategy handles what to draw
+- Undo/redo keeps a stack of changes (add/delete, which shape, where it was) so it can reverse them
 
-```bash
+How to run:
 cd Assignment2
 mvn clean javafx:run
+Needs Java 22.
+
+What's not done yet:
+- Save/Open in the menu don't actually do anything yet, that's the next thing I want to add
