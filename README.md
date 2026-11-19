@@ -1,8 +1,8 @@
 # ms-paint-java
 
-A paint app in JavaFX. I made it for CSC207 at UTM, with a group at first, then kept working on it after.
+A copy of the MS-paint app in JavaFX. I made it for CSC207 at UTM for a group project, then made some personal refinements to it.
 
-You can draw circles, rectangles, squares, ovals, triangles, polylines, squiggles, and text, plus an eraser. There's a colour picker, opacity, stroke width, fill/outline (M), undo (Ctrl+Z), redo (Ctrl+Y), delete, clear canvas, dark mode, and you can open multiple canvases as tabs and rename them.
+You can draw circles, rectangles, squares, ovals, triangles, polylines, squiggles, and text, plus use an eraser. There's a colour picker, opacity, stroke width, fill/outline (M), undo (Ctrl+Z), redo (Ctrl+Y), delete, clear canvas, dark mode, and you can open multiple canvases as tabs and rename them.
 
 I also added a colourblind-safe palette, since the default colours weren't great for that.
 
@@ -15,6 +15,3 @@ How to run:
 cd Assignment2
 mvn clean javafx:run
 Needs Java 22.
-
-What's not done yet:
-- Save/Open in the menu don't actually do anything yet, that's the next thing I want to add
